@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router'
 import Profile from './layouts/profile'
 import AboutMe from './layouts/aboutMe'
 import Article from './layouts/article'
+import Settings from "./layouts/settings";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/logout" element={<LogOut />} />
                 <Route path="/about-me" element={<AboutMe />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/settings" element={<Settings />} />
                 <Route path="/article" element={<Article />} />
                 <Route path="/" exact element={<Main />} />
             </Routes>

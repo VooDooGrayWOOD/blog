@@ -29,7 +29,7 @@
 }
 
 .post__title a {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     color: var(--white);
     font-weight: 500;
 
@@ -40,7 +40,7 @@
 }
 
 .post__title:hover {
-    text-decoration: underline;
+    color: #107eff;
 }
 
 .post__text {
@@ -59,12 +59,13 @@
     display: flex;
     padding-left: 0;
     color: #828282;
-    line-height: 1.2;
+    line-height: 1;
+    font-size: 1.2rem;
 
     text-decoration: none;
 }
 
-.post__data:hover {
+.post__data-item-title:hover {
     text-decoration: underline;
 }
 
@@ -82,12 +83,12 @@
 }
 
 .post__read {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: #107eff;
     text-decoration: none;
 }
 
 .post__read:hover {
-    color: #107eff;
-    text-decoration: underline;
+    color: #1ea18b;
+    text-decoration: none;
 }

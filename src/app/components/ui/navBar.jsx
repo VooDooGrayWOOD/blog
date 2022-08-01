@@ -113,14 +113,14 @@ export default function Example() {
                                                             'block px-4 py-2 text-[1.6rem] text-gray-300'
                                                         )}
                                                     >
-                                                        Ваш профиль
+                                                        Профиль
                                                     </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <Link
-                                                        to="#"
+                                                        to="/settings"
                                                         className={classNames(
                                                             active
                                                                 ? 'bg-gray-700'
