@@ -4,9 +4,9 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { Link } from 'react-router-dom'
 
 const navigation = [
-    { name: 'Главная', href: '/', current: true },
-    { name: 'Статьи', href: '/article', current: false },
-    { name: 'Обо мне', href: '/about-me', current: false }
+    { name: 'Главная', to: '/', current: true },
+    { name: 'Статьи', to: '/article', current: false },
+    { name: 'Обо мне', to: '/about-me', current: false }
 ]
 
 function classNames(...classes) {
@@ -45,7 +45,7 @@ export default function Example() {
                                         {navigation.map((item) => (
                                             <Link
                                                 key={item.name}
-                                                to={item.href}
+                                                to={item.to}
                                                 className={classNames(
                                                     item.current
                                                         ? 'bg-gray-900 text-white'

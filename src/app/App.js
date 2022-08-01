@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router'
 import Profile from './layouts/profile'
 import AboutMe from './layouts/aboutMe'
 import Article from './layouts/article'
-import Settings from "./layouts/settings";
+import Settings from './layouts/settings'
 
 function App() {
     return (
