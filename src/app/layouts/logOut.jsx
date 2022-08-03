@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { logOut } from '../store/users'
 
 const LogOut = () => {
-    return (
-        <div className="container mx-auto max-w-[760px] pt-5 text-teal-700 text-3xl">
-            Выход
-        </div>
-    )
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(logOut())
+    }, [])
+
+    return <h1>Loading...</h1>
 }
 
 export default LogOut
