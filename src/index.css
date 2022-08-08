@@ -15,7 +15,7 @@
 }
 
 html {
-    font-size: 10px;
+    /*font-size: 10px;*/
     background-color: rgb(17, 26, 32);
 }
 
@@ -25,7 +25,6 @@ body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1.4rem;
     line-height: 1.5;
     color: var(--white);
 }

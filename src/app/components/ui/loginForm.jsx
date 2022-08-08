@@ -4,11 +4,10 @@ import TextField from '../common/form/textField'
 import CheckBoxField from '../common/form/checkBoxField'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAuthErrors, logIn } from '../../store/users'
-import { useNavigate } from 'react-router'
+import { navigate } from '../../utils/history'
 
 const LoginForm = () => {
     const loginError = useSelector(getAuthErrors())
-    const navigator = useNavigate()
     const [data, setData] = useState({ email: '', password: '', stayOn: false })
     const [errors, setErrors] = useState({})
     const dispatch = useDispatch()
@@ -61,11 +60,8 @@ const LoginForm = () => {
         e.preventDefault()
         const isValid = validate()
         if (!isValid) return
-        console.log(navigator)
-        // const redirect = navigate.location.state
-        //     ? navigate.location.state.from.pathname
-        //     : '/'
         dispatch(logIn({ payload: data }))
+        navigate.push('/')
     }
 
     return (
@@ -93,11 +89,7 @@ const LoginForm = () => {
                 Оставаться в системе
             </CheckBoxField>
             {loginError && <p className="text-danger">{loginError}</p>}
-            <button
-                type="submit"
-                disabled={!isValid}
-                className="btn btn-primary w-100 mx-auto"
-            >
+            <button type="submit" disabled={!isValid}>
                 Отправить
             </button>
         </form>

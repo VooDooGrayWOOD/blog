@@ -7,46 +7,48 @@ import { getIsLoggedIn } from '../../store/users'
 const NavBar = () => {
     const isLoggedIn = useSelector(getIsLoggedIn())
     return (
-        <nav className="navbar bg-light mb-3">
-            <div className="container-fluid">
-                <ul className="nav">
-                    <li className="nav-item">
-                        <Link className="nav-link" aria-current="page" to="/">
+        <nav className="bg-nav-green relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
+            <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+                <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+                    <li className="ml-10 flex items-baseline space-x-4">
+                        <Link
+                            className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            aria-current="page"
+                            to="/"
+                        >
                             Главная
                         </Link>
                         <Link
-                            className="nav-link"
+                            className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                             aria-current="page"
                             to="/article"
                         >
                             Статьи
                         </Link>
                         <Link
-                            className="nav-link"
+                            className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                             aria-current="page"
                             to="/about-me"
                         >
                             Обо мне
                         </Link>
-                    </li>
-                    {isLoggedIn && (
-                        <li className="nav-item">
+                        {isLoggedIn && (
                             <Link
-                                className="nav-link"
+                                className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                                 aria-current="page"
                                 to="/users"
                             >
                                 Пользователи
                             </Link>
-                        </li>
-                    )}
+                        )}
+                    </li>
                 </ul>
                 <div className="d-flex">
                     {isLoggedIn ? (
                         <NavProfile />
                     ) : (
                         <Link
-                            className="nav-link"
+                            className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                             aria-current="page"
                             to="/login"
                         >

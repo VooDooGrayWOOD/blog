@@ -89,7 +89,7 @@ const userUpdateRequested = createAction('users/userUpdateRequested')
 const updateUserFailed = createAction('users/updateUserFailed')
 
 export const logIn =
-    ({ payload, redirect }) =>
+    ({ payload }) =>
     async (dispatch) => {
         const { email, password } = payload
         dispatch(authRequested())
@@ -97,7 +97,7 @@ export const logIn =
             const data = await authService.logIn({ email, password })
             dispatch(authRequestSuccess({ userId: data.localId }))
             localStorageService.setTokens(data)
-            navigate.push(redirect)
+            navigate.push('/')
         } catch (error) {
             const { code, message } = error.response.data.error
             if (code === 400) {
@@ -121,7 +121,7 @@ export const signUp =
                 createUser({
                     _id: data.localId,
                     email,
-                    image: `https://avatars.dicebear.com/api/avataaars/${(
+                    image: `https://avatars.dicebear.com/api/pixel-art/${(
                         Math.random() + 1
                     )
                         .toString(36)
@@ -137,6 +137,7 @@ export const signUp =
 export const logOut = () => (dispatch) => {
     localStorageService.removeAuthData()
     dispatch(userLoggedOut())
+    console.log(navigate)
     navigate.push('/')
 }
 
@@ -164,7 +165,7 @@ export const updateUser = (payload) => async (dispatch) => {
     }
 }
 
-export const loadUsersList = () => async (dispatch, getState) => {
+export const loadUsersList = () => async (dispatch) => {
     dispatch(userRequested())
     try {
         const { content } = await userService.get()

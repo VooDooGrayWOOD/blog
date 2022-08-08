@@ -21,7 +21,7 @@ const Users = () => {
                             <EditUserPage />
                         ) : (
                             <Navigate
-                                to={`/users/${currentUserId}/edit`}
+                                href={`/users/${currentUserId}/edit`}
                                 replace
                             />
                         )

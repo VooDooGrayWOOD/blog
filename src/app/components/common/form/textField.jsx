@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import { Input, Button } from '@material-tailwind/react'
 
 const TextField = ({ label, type, value, name, onChange, error }) => {
     const [showPassword, setShowPassword] = useState(false)
@@ -19,8 +20,8 @@ const TextField = ({ label, type, value, name, onChange, error }) => {
     return (
         <div className="mb-4">
             <label htmlFor={name}>{label}</label>
-            <div className="input-group has-validation">
-                <input
+            <div className="w-72">
+                <Input
                     type={showPassword ? 'text' : type}
                     id={name}
                     value={value}

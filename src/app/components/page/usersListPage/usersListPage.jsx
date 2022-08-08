@@ -34,25 +34,19 @@ const UsersListPage = () => {
     }
 
     if (users) {
-        // function filterUsers(data) {
-        //     const filteredUsers = searchQuery
-        //         ? data.filter(
-        //               (user) =>
-        //                   user.name
-        //                       .toLowerCase()
-        //                       .indexOf(searchQuery.toLowerCase()) !== -1
-        //           )
-        //         : selectedProf
-        //         ? data.filter(
-        //               (user) =>
-        //                   JSON.stringify(user.profession) ===
-        //                   JSON.stringify(selectedProf)
-        //           )
-        //         : data
-        //     return filteredUsers.filter((u) => u._id !== currentUserId._id)
-        // }
+        function filterUsers(data) {
+            const filteredUsers = searchQuery
+                ? data.filter(
+                      (user) =>
+                          user.name
+                              .toLowerCase()
+                              .indexOf(searchQuery.toLowerCase()) !== -1
+                  )
+                : data
+            return filteredUsers.filter((u) => u._id !== currentUserId._id)
+        }
 
-        const filteredUsers = users
+        const filteredUsers = filterUsers(users)
         const count = users.length
         const sortedUsers = _.orderBy(
             filteredUsers,
@@ -62,8 +56,8 @@ const UsersListPage = () => {
         const usersCrop = paginate(sortedUsers, currentPage, pageSize)
 
         return (
-            <div className="d-flex">
-                <div className="d-flex flex-column">
+            <div className="flex">
+                <div className="flex flex-col">
                     <OnlineStatus length={count} />
                     <input
                         type="text"
@@ -79,7 +73,7 @@ const UsersListPage = () => {
                             selectedSort={sortBy}
                         />
                     )}
-                    <div className="d-flex justify-content-center">
+                    <div className="flex justify-items-center">
                         <Pagination
                             itemsCount={count}
                             pageSize={pageSize}
