@@ -26,6 +26,14 @@ const EditUserPage = () => {
     }
 
     useEffect(() => {
+        if (currentUser && !data) {
+            setData({
+                ...currentUser
+            })
+        }
+    }, [currentUser, data])
+
+    useEffect(() => {
         if (data && isLoading) {
             setIsLoading(false)
         }

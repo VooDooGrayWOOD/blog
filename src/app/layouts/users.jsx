@@ -11,7 +11,7 @@ const Users = () => {
     const params = useParams()
     const { userId, edit } = params
     const currentUserId = useSelector(getCurrentUserId())
-
+    console.log(currentUserId)
     return (
         <>
             <UsersLoader>
@@ -21,7 +21,7 @@ const Users = () => {
                             <EditUserPage />
                         ) : (
                             <Navigate
-                                href={`/users/${currentUserId}/edit`}
+                                to={`/users/${currentUserId}/edit`}
                                 replace
                             />
                         )

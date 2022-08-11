@@ -182,7 +182,9 @@ export const getCurrentUserData = () => (state) => {
         : null
 }
 export const getUserById = (userId) => (state) => {
+    console.log(userId)
     if (state.users.entities) {
+        console.log(state.users.entities)
         return state.users.entities.find((u) => u._id === userId)
     }
 }

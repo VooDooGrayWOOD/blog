@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import { useSelector } from 'react-redux'
 import { getCurrentUserData } from '../../store/users'
 import { Menu, Transition } from '@headlessui/react'
+import { Link } from 'react-router-dom'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -37,41 +38,41 @@ const NavProfile = () => {
                 <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-nav-green ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <Menu.Item>
                         {({ active }) => (
-                            <a
-                                href="/user-page"
+                            <Link
+                                to="/user-page"
                                 className={classNames(
                                     active ? 'bg-gray-500 rounded-md' : '',
                                     'block px-4 py-2 text-sm text-white'
                                 )}
                             >
                                 Профиль
-                            </a>
+                            </Link>
                         )}
                     </Menu.Item>
                     <Menu.Item>
                         {({ active }) => (
-                            <a
-                                href="/settings"
+                            <Link
+                                to="/settings"
                                 className={classNames(
                                     active ? 'bg-gray-500 rounded-md' : '',
                                     'block px-4 py-2 text-sm text-white'
                                 )}
                             >
                                 Настройки
-                            </a>
+                            </Link>
                         )}
                     </Menu.Item>
                     <Menu.Item>
                         {({ active }) => (
-                            <a
-                                href="/logout"
+                            <Link
+                                to="/logout"
                                 className={classNames(
                                     active ? 'bg-gray-500 rounded-md' : '',
                                     'block px-4 py-2 text-sm text-white'
                                 )}
                             >
                                 Выход
-                            </a>
+                            </Link>
                         )}
                     </Menu.Item>
                 </Menu.Items>

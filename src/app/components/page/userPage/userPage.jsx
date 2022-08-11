@@ -11,15 +11,14 @@ const UserPage = ({ userId }) => {
     if (user) {
         return (
             <div className="container mx-auto max-w-[760px] pt-5 text-teal-700 text-3xl">
-                profile
-                {/*<div className="row gutters-sm">*/}
-                {/*    <div className="col-md-4 mb-3">*/}
-                {/*        <UserCard user={user} />*/}
-                {/*    </div>*/}
-                {/*    <div className="col-md-8">*/}
-                {/*        <Comments />*/}
-                {/*    </div>*/}
-                {/*</div>*/}
+                <div className="flex">
+                    <div className="flex mb-3">
+                        <UserCard user={user} />
+                    </div>
+                    <div className="">
+                        <Comments />
+                    </div>
+                </div>
             </div>
         )
     } else {

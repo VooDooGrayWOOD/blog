@@ -65,7 +65,7 @@ const LoginForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="grid justify-items-center">
             <TextField
                 label="Электронная почта"
                 onChange={handleChange}
@@ -89,7 +89,11 @@ const LoginForm = () => {
                 Оставаться в системе
             </CheckBoxField>
             {loginError && <p className="text-danger">{loginError}</p>}
-            <button type="submit" disabled={!isValid}>
+            <button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+                disabled={!isValid}
+            >
                 Отправить
             </button>
         </form>

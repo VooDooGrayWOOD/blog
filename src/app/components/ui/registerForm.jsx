@@ -87,7 +87,7 @@ const RegisterForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="grid justify-items-center">
             <TextField
                 label="Электронная почта"
                 name="email"
@@ -127,10 +127,15 @@ const RegisterForm = () => {
                 name="licence"
                 error={errors.licence}
             >
-                Подтвердить <a>лицензионное соглашение</a>
+                <div className="flex justify-items-center">
+                    <a className="text-sm mr-3 text-white">Подтвердить</a>
+                    <a className="text-sm">
+                        <em>лицензионное соглашение</em>
+                    </a>
+                </div>
             </CheckBoxField>
             <button
-                className="btn btn-primary w-100 mx-auto"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
                 type="submit"
                 disabled={!isValid}
             >

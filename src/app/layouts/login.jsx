@@ -15,32 +15,42 @@ const Login = () => {
     }
 
     return (
-        <div className="container min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-[36rem] w-full space-y-8">
+        <div className="container m-auto">
+            <div>
                 {formType === 'register' ? (
-                    <>
-                        <h3 className="mb-4">Зарегестрироваться</h3>
+                    <div className="">
+                        <h3 className="flex justify-center mb-4">
+                            Зарегестрироваться
+                        </h3>
                         <RegisterForm />
-                        <p>
+                        <p className="flex justify-center pt-4">
                             Есть аккаунт?{' '}
-                            <a role="button" onClick={toggleFormType}>
+                            <a
+                                role="button"
+                                onClick={toggleFormType}
+                                className="pl-3"
+                            >
                                 {' '}
                                 Войти
                             </a>
                         </p>
-                    </>
+                    </div>
                 ) : (
-                    <>
-                        <h3 className="mb-4">Войти</h3>
+                    <div className="flex-col items-center">
+                        <h3 className="flex justify-center mb-4">Войти</h3>
                         <LoginForm />
-                        <p>
+                        <p className="flex justify-center pt-4">
                             Нет аккаунта?{' '}
-                            <a role="button" onClick={toggleFormType}>
+                            <a
+                                role="button"
+                                onClick={toggleFormType}
+                                className="pl-3"
+                            >
                                 {' '}
                                 Зарегестрироваться
                             </a>
                         </p>
-                    </>
+                    </div>
                 )}
             </div>
         </div>
