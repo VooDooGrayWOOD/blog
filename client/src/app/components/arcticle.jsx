@@ -6,7 +6,7 @@ const articlePost = () => {
         <>
             <article className="post">
                 <div className="post__header">
-                    <a className="post__preview" href="#">
+                    <a className="post__preview" href="client/src/app/components/arcticle#">
                         <img
                             src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
                             alt="Как писать быстро и безболезненно?"
@@ -15,7 +15,7 @@ const articlePost = () => {
                 </div>
                 <div className="post__content">
                     <h2 className="post__title">
-                        <a href="#">Как писать быстро и безболезненно?</a>
+                        <a href="client/src/app/components/arcticle#">Как писать быстро и безболезненно?</a>
                     </h2>
                     <p className="post__text">
                         Lorem ipsum dolor sit, amet consectetur adipisicing
@@ -35,14 +35,14 @@ const articlePost = () => {
                         </li>
                     </ul>
 
-                    <a href="#" className="post__read">
+                    <a href="client/src/app/components/arcticle#" className="post__read">
                         читать
                     </a>
                 </div>
             </article>
             <article className="post">
                 <div className="post__header">
-                    <a className="post__preview" href="#">
+                    <a className="post__preview" href="client/src/app/components/arcticle#">
                         <img
                             src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                             alt="Купил новый ноутбук для работы"
@@ -51,7 +51,7 @@ const articlePost = () => {
                 </div>
                 <div className="post__content">
                     <h2 className="post__title">
-                        <a href="#">Купил новый ноутбук для работы</a>
+                        <a href="client/src/app/components/arcticle#">Купил новый ноутбук для работы</a>
                     </h2>
                     <p className="post__text">
                         Lorem ipsum dolor sit, amet consectetur adipisicing
@@ -71,7 +71,7 @@ const articlePost = () => {
                         </li>
                     </ul>
 
-                    <a href="#" className="post__read">
+                    <a href="client/src/app/components/arcticle#" className="post__read">
                         читать
                     </a>
                 </div>
