@@ -1,0 +1,26 @@
+[
+    {"_id": "62f735927d51207639120891",
+    "name": "Боб Келсо",
+    "email": "bob007@tw.com",
+    "password": "Test1234",
+    "image": "https://avatars.dicebear.com/api/pixel-art/mnidlh.svg",
+    "sex": "male"
+    },
+    {
+        "_id": "62f735927d51207639120892",
+        "name": "Джоуи Триббиани",
+        "email": "joe@trib.com",
+        "password": "Test1234",
+        "image": "https://avatars.dicebear.com/api/pixel-art/6und.svg",
+        "sex": "male"
+    },
+    {
+        "_id": "62f735927d51207639120893",
+        "name": "VooDoo",
+        "email": "voo@mail.ru",
+        "password": "Test1234",
+        "image": "https://avatars.dicebear.com/api/avataaars/7635h.svg",
+        "sex": "male"
+    }
+]
+
