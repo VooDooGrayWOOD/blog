@@ -12,7 +12,7 @@ const UserPage = ({ userId }) => {
         return (
             <div className="container mx-auto max-w-[760px] pt-5 text-teal-700 text-3xl">
                 <div className="flex">
-                    <div className="flex mb-3">
+                    <div className="flex mb-6">
                         <UserCard user={user} />
                     </div>
                     <div className="">

@@ -39,7 +39,7 @@ const NavProfile = () => {
                     <Menu.Item>
                         {({ active }) => (
                             <Link
-                                to="/user-page"
+                                to={`/users/${currentUser._id}`}
                                 className={classNames(
                                     active ? 'bg-gray-500 rounded-md' : '',
                                     'block px-4 py-2 text-sm text-white'

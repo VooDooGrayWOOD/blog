@@ -5,7 +5,7 @@ import App from './app/App'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore } from './app/store'
-import { navigate } from './app/utils/history'
+import { navigate } from './app/utils/navigate'
 
 const store = createStore()
 
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
     <Provider store={store}>
-        <Router history={navigate}>
+        <Router navigate={navigate}>
             <App />
         </Router>
     </Provider>

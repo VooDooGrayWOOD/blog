@@ -40,7 +40,7 @@ const AddCommentForm = ({ onSubmit }) => {
 
     return (
         <div>
-            <h2>New comment</h2>
+            <h3>New comment</h3>
             <form onSubmit={handleSubmit}>
                 <TextAreaField
                     value={data.content || ''}
@@ -49,8 +49,8 @@ const AddCommentForm = ({ onSubmit }) => {
                     label="Сообщение"
                     error={errors.content}
                 />
-                <div className="d-flex justify-content-end">
-                    <button className="btn btn-primary">Опубликовать</button>
+                <div className="flex content-end">
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 border border-blue-700 rounded">Опубликовать</button>
                 </div>
             </form>
         </div>

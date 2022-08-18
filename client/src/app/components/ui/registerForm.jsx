@@ -3,7 +3,7 @@ import { validator } from '../../utils/validator'
 import TextField from '../common/form/textField'
 import RadioField from '../common/form/radioField'
 import CheckBoxField from '../common/form/checkBoxField'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { signUp } from '../../store/users'
 
 const RegisterForm = () => {

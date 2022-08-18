@@ -4,7 +4,7 @@ import TextField from '../common/form/textField'
 import CheckBoxField from '../common/form/checkBoxField'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAuthErrors, logIn } from '../../store/users'
-import { navigate } from '../../utils/history'
+import { navigate } from '../../utils/navigate'
 
 const LoginForm = () => {
     const loginError = useSelector(getAuthErrors())

@@ -1,17 +1,19 @@
 import React from 'react'
-import { Navigate, useParams } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import EditUserPage from '../components/page/editUserPage'
 import UserPage from '../components/page/userPage'
 import UsersListPage from '../components/page/usersListPage'
 import { useSelector } from 'react-redux'
 import { getCurrentUserId } from '../store/users'
 import UsersLoader from '../components/ui/hoc/usersLoader'
+import {getUserId} from "../services/localStorage.service";
+import {useParams} from "react-router";
 
 const Users = () => {
     const params = useParams()
-    const { userId, edit } = params
+    const { edit } = params
+    const userId = useSelector(getUserId)
     const currentUserId = useSelector(getCurrentUserId())
-    console.log(currentUserId)
     return (
         <>
             <UsersLoader>
@@ -20,7 +22,7 @@ const Users = () => {
                         userId === currentUserId ? (
                             <EditUserPage />
                         ) : (
-                            <Navigate
+                            <Link
                                 to={`/users/${currentUserId}/edit`}
                                 replace
                             />
