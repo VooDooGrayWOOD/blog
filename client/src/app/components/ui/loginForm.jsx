@@ -4,7 +4,7 @@ import TextField from '../common/form/textField'
 import CheckBoxField from '../common/form/checkBoxField'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAuthErrors, logIn } from '../../store/users'
-import { navigate } from '../../utils/navigate'
+import { history } from '../../utils/history'
 
 const LoginForm = () => {
     const loginError = useSelector(getAuthErrors())
@@ -61,7 +61,7 @@ const LoginForm = () => {
         const isValid = validate()
         if (!isValid) return
         dispatch(logIn({ payload: data }))
-        navigate.push('/')
+        history.push('/')
     }
 
     return (

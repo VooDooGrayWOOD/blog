@@ -3,19 +3,18 @@ import PropTypes from 'prop-types'
 import UserCard from '../../ui/userCard'
 import Comments from '../../ui/comments'
 import { useSelector } from 'react-redux'
-import { getUserById } from '../../../store/users'
+import {getUserId} from "../../../services/localStorage.service";
 
-const UserPage = ({ userId }) => {
-    const user = useSelector(getUserById(userId))
-    console.log(user)
-    if (user) {
+const UserPage = () => {
+    const id = useSelector(getUserId)
+    if (id) {
         return (
             <div className="container mx-auto max-w-[760px] pt-5 text-teal-700 text-3xl">
                 <div className="flex">
                     <div className="flex mb-6">
-                        <UserCard user={user} />
+                        <UserCard id={id} />
                     </div>
-                    <div className="">
+                    <div className="flex mb-6">
                         <Comments />
                     </div>
                 </div>

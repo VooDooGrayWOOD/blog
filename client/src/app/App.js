@@ -20,27 +20,18 @@ function App() {
             <AppLoader>
                 <NavBar />
                 <Routes>
-
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/logout" element={<LogOut />} />
-                    <Route path="/about-me" element={<AboutMe />} />
-                    <Route path="/users" element={<Users />} />
-                        {/*<Route path=":id" element={<UserPage/>}/>*/}
-                        {/*<Route path=":id/edit" element={<EditUserPage/>}/>*/}
-                    {/*<Route*/}
-                    {/*    path="/users/:userId?/:edit?"*/}
-                    {/*    element={*/}
-                    {/*        <ProtectedRoute>*/}
-                    {/*            <Users />*/}
-                    {/*        </ProtectedRoute>*/}
-                    {/*    }*/}
-                    {/*/>*/}
-                    {/*<Route path="/user-page" element={<UserPage />} />*/}
-                    <Route path="/settings" element={<Settings />} />
-                    <Route path="/article" element={<Article />} />
                     <Route path="/" element={<Main />} />
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                </Routes>
+                        <Route path="/article" element={<Article />} />
+                        <Route path="/about-me" element={<AboutMe />} />
+                        <Route path="/users" element={<Users />} />
+                            <Route path="/users/:id" element={<UserPage/>}/>
+                            <Route path="/users/:id/edit" element={<EditUserPage/>}/>
+                        <Route path="/settings" element={<Settings />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/logout" element={<LogOut />} />
+                        <Route path="*" element={<Navigate to="/" replace />} />
+
+                    </Routes>
             </AppLoader>
             <ToastContainer />
         </div>

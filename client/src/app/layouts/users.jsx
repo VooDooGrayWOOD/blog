@@ -13,11 +13,14 @@ const Users = () => {
     const params = useParams()
     const { edit } = params
     const userId = useSelector(getUserId)
+    console.log(userId);
     const currentUserId = useSelector(getCurrentUserId())
     return (
         <>
             <UsersLoader>
                 {userId ? (
+                        <UsersListPage />
+                ) : (
                     edit ? (
                         userId === currentUserId ? (
                             <EditUserPage />
@@ -28,10 +31,8 @@ const Users = () => {
                             />
                         )
                     ) : (
-                        <UserPage userId={userId} />
+                        <UserPage />
                     )
-                ) : (
-                    <UsersListPage />
                 )}
             </UsersLoader>
         </>

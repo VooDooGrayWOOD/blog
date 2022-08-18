@@ -1,4 +1,3 @@
 import { createBrowserHistory } from 'history'
 
-export const navigate = createBrowserHistory()
-
+export const history = createBrowserHistory()

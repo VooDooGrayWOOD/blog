@@ -1,56 +1,36 @@
 import React from 'react'
-import { useNavigate } from 'react-router'
+// import { history } from '../../utils/history'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import { getCurrentUserData, getCurrentUserId } from '../../store/users'
-import { Link } from 'react-router-dom'
+import {useNavigate} from "react-router";
 
-const UserCard = ({ user }) => {
+
+const UserCard = ({ id }) => {
     const currentUser = useSelector(getCurrentUserData())
     const currentUserId = useSelector(getCurrentUserId())
+    // const handleClick = () => {
+    //     history.replace(`/users/${currentUserId}/edit`)
+    // }
     const navigate = useNavigate()
-    const handleClick = () => {
-        navigate.push(navigate.location.pathname + '/edit')
-    }
+
     return (
         <div className="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div className="flex justify-end px-4 pt-4">
-                {currentUserId === user._id && (
+            {currentUserId === id && (
+                <div className="flex justify-end px-4 pt-4">
                     <button
-                        id="dropdownButton"
-                        data-dropdown-toggle="dropdown"
                         className="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5"
                         type="button"
+                        onClick={() => {navigate(`/users/${currentUserId}/edit`)}}
                     >
-                        <span className="sr-only">Open dropdown</span>
-                        <svg
-                            className="w-6 h-6"
-                            aria-hidden="true"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
                         </svg>
                     </button>
-                )}
-
-                <div
-                    id="dropdown"
-                    className="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
-                >
-                    <ul className="py-1" aria-labelledby="dropdownButton">
-                        <li>
-                            <Link
-                                to="/"
-                                className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                            >
-                                Edit
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
             </div>
+            )}
             <div className="flex flex-col items-center pb-10">
                 <img
                     className="m-12 w-[10rem] h-[10rem] rounded-full shadow-lg"
@@ -83,7 +63,7 @@ const UserCard = ({ user }) => {
 }
 
 UserCard.propTypes = {
-    user: PropTypes.object
+    user: PropTypes.string
 }
 
 export default UserCard

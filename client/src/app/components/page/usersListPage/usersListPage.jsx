@@ -33,7 +33,6 @@ const UsersListPage = () => {
         setSortBy(item)
     }
 
-    if (users) {
         function filterUsers(data) {
             const filteredUsers = searchQuery
                 ? data.filter(
@@ -84,8 +83,6 @@ const UsersListPage = () => {
                 </div>
             </div>
         )
-    }
-    return 'loading...'
 }
 UsersListPage.propTypes = {
     users: PropTypes.array

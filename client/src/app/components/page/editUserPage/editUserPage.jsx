@@ -70,12 +70,12 @@ const EditUserPage = () => {
     }
     const isValid = Object.keys(errors).length === 0
     return (
-        <div className="container mt-5">
-            <BackHistoryButton />
-            <div className="row">
-                <div className="col-md-6 offset-md-3 shadow p-4">
+        <div className="container">
+            <div className="row-auto">
+                <div className="p-4">
+                    <BackHistoryButton />
                     {!isLoading ? (
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className="grid justify-items-center">
                             <TextField
                                 label="Имя"
                                 name="name"
@@ -104,7 +104,7 @@ const EditUserPage = () => {
                             <button
                                 type="submit"
                                 disabled={!isValid}
-                                className="btn btn-primary w-100 mx-auto"
+                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
                             >
                                 Обновить
                             </button>

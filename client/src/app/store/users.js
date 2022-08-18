@@ -4,7 +4,7 @@ import authService from '../services/auth.service'
 import localStorageService from '../services/localStorage.service'
 import { createAction } from '@reduxjs/toolkit'
 import generateAuthError from '../utils/generateAuthError'
-import { navigate } from '../utils/navigate'
+import { history } from '../utils/history'
 
 const initialState = localStorageService.getAccessToken()
     ? {
@@ -92,9 +92,9 @@ export const logIn =
         dispatch(authRequested())
         try {
             const data = await authService.logIn({ email, password })
-            dispatch(authRequestSuccess({ userId: data.localId }))
             localStorageService.setTokens(data)
-            navigate.replace("/")
+            dispatch(authRequestSuccess({ userId: data.userId }))
+            history.push("/")
         } catch (error) {
             const { code, message } = error.response.data.error
             if (code === 400) {
@@ -114,7 +114,7 @@ export const signUp =
             const data = await authService.register(payload)
             localStorageService.setTokens(data)
             dispatch(authRequestSuccess({ userId: data.userId }))
-            navigate.replace("/users")
+            history.push("/users")
         } catch (error) {
             dispatch(authRequestFailed(error.message))
         }
@@ -123,8 +123,8 @@ export const signUp =
 export const logOut = () => (dispatch) => {
     localStorageService.removeAuthData()
     dispatch(userLoggedOut())
-    console.log(navigate)
-    navigate.replace("/")
+    console.log(history)
+    history.push("/")
 }
 
 
@@ -133,7 +133,7 @@ export const updateUser = (payload) => async (dispatch) => {
     try {
         const { content } = await userService.update(payload)
         dispatch(userUpdateSuccessed(content))
-        navigate.push(`/users/${content._id}`)
+        history.push(`/users/${content._id}`)
     } catch (error) {
         dispatch(updateUserFailed(error.message))
     }
