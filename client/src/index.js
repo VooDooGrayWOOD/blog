@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './app/App'
-import { BrowserRouter as Router } from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore } from './app/store'
 import { history } from './app/utils/history'
@@ -13,8 +13,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
     <Provider store={store}>
-        <Router history={history}>
+        <BrowserRouter history={history}>
             <App />
-        </Router>
+        </BrowserRouter>
     </Provider>
 )

@@ -18,7 +18,7 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
     }
 
     return (
-        <thead>
+        <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
             <tr>
                 {Object.keys(columns).map((column) => (
                     <th
@@ -30,6 +30,7 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
                         }
                         {...{ role: columns[column].path && 'button' }}
                         scope="col"
+                        className='class="py-3 px-6'
                     >
                         {columns[column].name}
                         {selectedSort.path === columns[column].path ? (

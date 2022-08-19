@@ -11,6 +11,10 @@ const UserTable = ({ users, onSort, selectedSort }) => {
             component: (user) => (
                 <Link to={`/users/${user._id}`}>{user.name}</Link>
             )
+        },
+        sex: {
+            path: 'sex',
+            name: 'Пол'
         }
     }
     return (
@@ -26,8 +30,7 @@ const UserTable = ({ users, onSort, selectedSort }) => {
 UserTable.propTypes = {
     users: PropTypes.array,
     onSort: PropTypes.func,
-    selectedSort: PropTypes.object,
-    onToggleBookMark: PropTypes.func
+    selectedSort: PropTypes.object
 }
 
 export default UserTable

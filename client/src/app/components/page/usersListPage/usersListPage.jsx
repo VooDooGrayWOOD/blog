@@ -14,7 +14,7 @@ const UsersListPage = () => {
     const currentUserId = useSelector(getCurrentUserId())
     const [searchQuery, setSearchQuery] = useState('')
     const [sortBy, setSortBy] = useState({ path: 'name', order: 'asc' })
-    const pageSize = 8
+    const pageSize = 4
 
     const users = useSelector(getUsersList())
 
@@ -55,7 +55,7 @@ const UsersListPage = () => {
         const usersCrop = paginate(sortedUsers, currentPage, pageSize)
 
         return (
-            <div className="flex">
+            <div className="flex justify-center">
                 <div className="flex flex-col">
                     <OnlineStatus length={count} />
                     <input
@@ -64,6 +64,7 @@ const UsersListPage = () => {
                         placeholder="Search..."
                         onChange={handleSearchQuery}
                         value={searchQuery}
+                        className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                     />
                     {count > 0 && (
                         <UserTable

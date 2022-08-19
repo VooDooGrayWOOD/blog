@@ -8,18 +8,19 @@ const Pagination = ({ itemsCount, pageSize, onPageChange, currentPage }) => {
     const pages = _.range(1, pageCount + 1)
 
     return (
-        <nav>
-            <ul className="pagination">
+        <nav aria-label="Page navigation example">
+            <ul className="inline-flex items-center -space-x-px">
                 {pages.map((page) => (
                     <li
+                        aria-current="page"
                         key={'page_' + page}
                         className={
-                            'page-item' +
+                            'py-2 px-3 rounded-lg leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white page-item' +
                             (page === currentPage ? ' active' : '')
                         }
                     >
                         <button
-                            className="page-link"
+                            className="z-10 py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-blue-300 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
                             onClick={() => onPageChange(page)}
                         >
                             {page}
