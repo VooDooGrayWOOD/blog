@@ -1,25 +1,18 @@
 [
-    {"_id": "62f735927d51207639120891",
-    "name": "Боб Келсо",
-    "email": "bob007@tw.com",
-    "password": "Test1234",
-    "image": "https://avatars.dicebear.com/api/pixel-art/mnidlh.svg",
-    "sex": "male"
-    },
     {
-        "_id": "62f735927d51207639120892",
-        "name": "Джоуи Триббиани",
-        "email": "joe@trib.com",
-        "password": "Test1234",
-        "image": "https://avatars.dicebear.com/api/pixel-art/6und.svg",
+        "_id": "62ff602735feb98851d28f87",
+        "name": "Боб Келсо",
+        "email": "bob007@tw.com",
+        "password": "$2a$12$JtP32rzBPqApO5btgXVKJuRPDVTzkgnYsOH0tUri8H6ZPB3.B0ZRO",
+        "image": "https://avatars.dicebear.com/api/pixel-art/2cwfz.svg",
         "sex": "male"
     },
     {
-        "_id": "62f735927d51207639120893",
+        "_id": "62ff5f34e382499bcfe89fa1",
         "name": "VooDoo",
         "email": "voo@mail.ru",
-        "password": "Test1234",
-        "image": "https://avatars.dicebear.com/api/avataaars/7635h.svg",
+        "password": "$2a$12$f7.jHX0RRhFeReHtS4n.GOuQVHZE8ATSru8dIusF6O/ghetQJT4fC",
+        "image": "https://avatars.dicebear.com/api/pixel-art/ush1r.svg",
         "sex": "male"
     }
 ]

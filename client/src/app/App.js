@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router'
 import AboutMe from './layouts/aboutMe'
 import Article from './layouts/article'
 import Settings from './layouts/settings'
-import { Navigate } from 'react-router-dom'
+import { Navigate } from 'react-router'
 import Users from './layouts/users'
 import AppLoader from './components/ui/hoc/appLoader'
 import UserPage from './components/page/userPage'
@@ -23,9 +23,10 @@ function App() {
                     <Route path="/" element={<Main />} />
                         <Route path="/article" element={<Article />} />
                         <Route path="/about-me" element={<AboutMe />} />
-                        <Route path="/users" element={<Users />} />
-                            <Route path="/users/:id" element={<UserPage/>}/>
-                            <Route path="/users/:id/edit" element={<EditUserPage/>}/>
+                        <Route path="/users" element={<Users />}/>
+                            <Route path="/users/:userId" element={<UserPage />}/>
+                            <Route path="/users/:userId/:edit" element={<EditUserPage />}/>
+
                         <Route path="/settings" element={<Settings />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/logout" element={<LogOut />} />

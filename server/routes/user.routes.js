@@ -14,12 +14,11 @@ router.get('/', auth, async (req, res) => {
     }
 })
 
-router.patch('/:id', auth, async (req, res) => {
+router.patch('/:_id', auth, async (req, res) => {
      try {
-         const { userId } = req.params
-
-         if (userId === req.user._id) {
-            const updatedUser = await User.findByIdAndUpdate(userId, req.body, {new: true})
+         const { _id } = req.params
+         if (_id === req.user._id) {
+            const updatedUser = await User.findByIdAndUpdate(_id, req.body, {new: true})
              res.send(updatedUser)
          } else {
              res.status(401).json({ message: 'Unauthorized' })

@@ -7,32 +7,29 @@ import { useSelector } from 'react-redux'
 import { getCurrentUserId } from '../store/users'
 import UsersLoader from '../components/ui/hoc/usersLoader'
 import {getUserId} from "../services/localStorage.service";
-import {useParams} from "react-router";
+import {Navigate, useParams} from "react-router";
 
 const Users = () => {
     const params = useParams()
-    const { edit } = params
-    const userId = useSelector(getUserId)
+    const { userId, edit } = params
+    console.log(edit);
     console.log(userId);
     const currentUserId = useSelector(getCurrentUserId())
     return (
         <>
             <UsersLoader>
                 {userId ? (
-                        <UsersListPage />
-                ) : (
                     edit ? (
                         userId === currentUserId ? (
                             <EditUserPage />
                         ) : (
-                            <Link
-                                to={`/users/${currentUserId}/edit`}
-                                replace
-                            />
+                            <Navigate to={`/users/${currentUserId}/edit`} />
                         )
                     ) : (
-                        <UserPage />
+                        <UserPage userId={userId} />
                     )
+                ) : (
+                    <UsersListPage />
                 )}
             </UsersLoader>
         </>

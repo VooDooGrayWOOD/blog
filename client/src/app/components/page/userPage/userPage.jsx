@@ -4,15 +4,17 @@ import UserCard from '../../ui/userCard'
 import Comments from '../../ui/comments'
 import { useSelector } from 'react-redux'
 import {getUserId} from "../../../services/localStorage.service";
+import {getUserById} from "../../../store/users";
 
-const UserPage = () => {
-    const id = useSelector(getUserId)
-    if (id) {
+const UserPage = ({userId}) => {
+    console.log(userId);
+    const user = useSelector(getUserById(userId))
+    if (user) {
         return (
             <div className="container mx-auto max-w-[760px] pt-5 text-teal-700 text-3xl">
                 <div className="flex">
                     <div className="flex mb-6">
-                        <UserCard id={id} />
+                        <UserCard user={user} />
                     </div>
                     <div className="flex mb-6">
                         <Comments />
