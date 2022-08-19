@@ -94,7 +94,7 @@ export const logIn =
             const data = await authService.logIn({ email, password })
             localStorageService.setTokens(data)
             dispatch(authRequestSuccess({ userId: data.userId }))
-            history.push("/")
+            history.push('/')
         } catch (error) {
             const { code, message } = error.response.data.error
             if (code === 400) {
@@ -106,27 +106,24 @@ export const logIn =
         }
     }
 
-export const signUp =
-    (payload) =>
-    async (dispatch) => {
-        dispatch(authRequested())
-        try {
-            const data = await authService.register(payload)
-            localStorageService.setTokens(data)
-            dispatch(authRequestSuccess({ userId: data.userId }))
-            history.push("/users")
-        } catch (error) {
-            dispatch(authRequestFailed(error.message))
-        }
+export const signUp = (payload) => async (dispatch) => {
+    dispatch(authRequested())
+    try {
+        const data = await authService.register(payload)
+        localStorageService.setTokens(data)
+        dispatch(authRequestSuccess({ userId: data.userId }))
+        history.push('/users')
+    } catch (error) {
+        dispatch(authRequestFailed(error.message))
     }
+}
 
 export const logOut = () => (dispatch) => {
     localStorageService.removeAuthData()
     dispatch(userLoggedOut())
     console.log(history)
-    history.push("/")
+    history.push('/')
 }
-
 
 export const updateUser = (payload) => async (dispatch) => {
     dispatch(userUpdateRequested())
@@ -156,9 +153,7 @@ export const getCurrentUserData = () => (state) => {
         : null
 }
 export const getUserById = (userId) => (state) => {
-    console.log(userId)
     if (state.users.entities) {
-        console.log(state.users.entities)
         return state.users.entities.find((u) => u._id === userId)
     }
 }

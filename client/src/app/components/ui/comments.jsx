@@ -22,7 +22,7 @@ const Comments = () => {
     const comments = useSelector(getComments())
 
     const handleSubmit = (data) => {
-        dispatch(createComments({ ...data, userId }))
+        dispatch(createComments({ ...data, pageId: userId }))
     }
 
     const handleRemoveComment = (id) => {
@@ -32,17 +32,16 @@ const Comments = () => {
     const sortedComments = orderBy(comments, ['created_at'], ['desc'])
 
     return (
-        <>
+        <div className="flex-col">
             <div>
-                <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <div className="block p-6 max-w-sm ml-3 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <AddCommentForm onSubmit={handleSubmit} />
                 </div>
             </div>
             {sortedComments.length > 0 && (
                 <div>
-                    <div className="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                        <h2>Comments</h2>
-                        <hr />
+                    <div className="block p-6 max-w-sm ml-3 mt-3 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                        <h2>Комментарии</h2>
                         {!isLoading ? (
                             <CommentsList
                                 comments={sortedComments}
@@ -54,7 +53,7 @@ const Comments = () => {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     )
 }
 

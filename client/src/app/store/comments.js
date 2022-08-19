@@ -48,7 +48,7 @@ const deleteCommentsRequested = createAction(
 )
 
 export const loadCommentsList = (pageId) => async (dispatch) => {
-    console.log(pageId);
+    console.log(pageId)
     dispatch(commentsRequested())
     try {
         const { content } = await commentService.getComments(pageId)
@@ -58,22 +58,21 @@ export const loadCommentsList = (pageId) => async (dispatch) => {
     }
 }
 
-export const createComments =
-    (payload) => async (dispatch) => {
-        dispatch(createCommentsRequested())
-        try {
-            const { content } = await commentService.createComment(payload)
-            dispatch(commentsCreated(content))
-        } catch (error) {
-            dispatch(commentsRequestFiled(error.message))
-        }
+export const createComments = (payload) => async (dispatch) => {
+    dispatch(createCommentsRequested())
+    try {
+        const { content } = await commentService.createComment(payload)
+        dispatch(commentsCreated(content))
+    } catch (error) {
+        dispatch(commentsRequestFiled(error.message))
     }
+}
 
 export const deleteComment = (id) => async (dispatch) => {
     dispatch(deleteCommentsRequested())
     try {
         const { content } = await commentService.removeComment(id)
-        if (content === null) {
+        if (!content) {
             dispatch(commentRemove(id))
         }
     } catch (error) {

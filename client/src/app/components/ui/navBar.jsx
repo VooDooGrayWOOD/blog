@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import NavProfile from './navProfile'
 import { useSelector } from 'react-redux'
 import { getIsLoggedIn } from '../../store/users'
@@ -11,35 +11,35 @@ const NavBar = () => {
             <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                 <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                     <li className="ml-10 flex items-baseline space-x-4">
-                        <Link
+                        <NavLink
                             className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                             aria-current="page"
                             to="/"
                         >
                             Главная
-                        </Link>
-                        <Link
+                        </NavLink>
+                        <NavLink
                             className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                             aria-current="page"
                             to="/article"
                         >
                             Статьи
-                        </Link>
-                        <Link
+                        </NavLink>
+                        <NavLink
                             className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                             aria-current="page"
                             to="/about-me"
                         >
                             Обо мне
-                        </Link>
+                        </NavLink>
                         {isLoggedIn && (
-                            <Link
+                            <NavLink
                                 className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                                 aria-current="page"
                                 to="/users"
                             >
                                 Пользователи
-                            </Link>
+                            </NavLink>
                         )}
                     </li>
                 </ul>
@@ -47,13 +47,13 @@ const NavBar = () => {
                     {isLoggedIn ? (
                         <NavProfile />
                     ) : (
-                        <Link
+                        <NavLink
                             className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                             aria-current="page"
                             to="/login"
                         >
                             Войти
-                        </Link>
+                        </NavLink>
                     )}
                 </div>
             </div>
