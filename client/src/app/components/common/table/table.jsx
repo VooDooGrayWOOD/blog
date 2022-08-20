@@ -5,8 +5,8 @@ import TableHeader from './tableHeader'
 
 const Table = ({ onSort, selectedSort, columns, data, children }) => {
     return (
-        <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
-            <table className="table-auto">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table className="m-2 table-auto">
                 {children || (
                     <>
                         <TableHeader {...{ onSort, selectedSort, columns }} />

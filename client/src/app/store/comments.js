@@ -48,7 +48,6 @@ const deleteCommentsRequested = createAction(
 )
 
 export const loadCommentsList = (pageId) => async (dispatch) => {
-    console.log(pageId)
     dispatch(commentsRequested())
     try {
         const { content } = await commentService.getComments(pageId)
