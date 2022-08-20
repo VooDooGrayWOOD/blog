@@ -1,20 +1,14 @@
 import httpService from './http.service'
-import localStorageService from './localStorage.service'
 
-const articleEndPoint = 'article/'
+const articleEndPoint = 'articleTable/'
 
 const articleService = {
-    createArticle: async (payload) => {
-        const { data } = await httpService.post(articleEndPoint, payload)
+    get: async () => {
+        const { data } = await httpService.get(articleEndPoint)
         return data
     },
-    getArticle: async (articleId) => {
-        const { data } = await httpService.get(articleEndPoint, {
-            params: {
-                orderBy: 'articleId',
-                equalTo: `${articleId}`
-            }
-        })
+    createArticle: async (payload) => {
+        const { data } = await httpService.post(articleEndPoint, payload)
         return data
     },
     removeArticle: async (articleId) => {
@@ -22,10 +16,7 @@ const articleService = {
         return data
     },
     update: async (payload) => {
-        const { data } = await httpService.patch(
-            articleEndPoint + localStorageService.getArticleId(),
-            payload
-        )
+        const { data } = await httpService.patch(articleEndPoint, payload)
         return data
     }
 }

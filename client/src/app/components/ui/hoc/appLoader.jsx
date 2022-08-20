@@ -6,6 +6,7 @@ import {
 } from '../../../store/users'
 import { useDispatch, useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
+import { loadArticleList } from '../../../store/article'
 
 const AppLoader = ({ children }) => {
     const dispatch = useDispatch()
@@ -14,6 +15,7 @@ const AppLoader = ({ children }) => {
     useEffect(() => {
         if (isLoggedIn) {
             dispatch(loadUsersList())
+            dispatch(loadArticleList())
         }
     }, [isLoggedIn])
     if (usersStatusLoading) return 'Loading...'

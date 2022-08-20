@@ -1,7 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ArrowSmUpIcon } from '@heroicons/react/solid'
-import { ArrowSmDownIcon } from '@heroicons/react/solid'
 
 const TableHeader = ({ onSort, selectedSort, columns }) => {
     const handleSort = (item) => {

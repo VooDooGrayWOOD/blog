@@ -4,7 +4,8 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'nav-green': '#0a171a'
+                'nav-green': '#0a171a',
+                'white-rabbit': '#d2d2d2'
             }
         }
     },

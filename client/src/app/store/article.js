@@ -1,7 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAction } from '@reduxjs/toolkit'
 import articleService from '../services/article.service'
-import { createAction } from '@reduxjs/toolkit'
 import { history } from '../utils/history'
+import localStorageService from '../services/localStorage.service'
+import login from '../layouts/login'
 
 const articleSlice = createSlice({
     name: 'article',
@@ -52,18 +53,24 @@ const {
     articleUpdateSuccessed
 } = actions
 
-const createArticleRequested = createAction('/article/createArticleRequested')
-const deleteArticleRequested = createAction('/article/deleteArticleRequested')
-const articleUpdateRequested = createAction('article/articleUpdateRequested')
-const updateArticleFailed = createAction('article/updateArticleFailed')
+const createArticleRequested = createAction(
+    '/articleTable/createArticleRequested'
+)
+const deleteArticleRequested = createAction(
+    '/articleTable/deleteArticleRequested'
+)
+const articleUpdateRequested = createAction(
+    'articleTable/articleUpdateRequested'
+)
+const updateArticleFailed = createAction('articleTable/updateArticleFailed')
 
-export const loadArticleList = (articleId) => async (dispatch) => {
+export const loadArticleList = () => async (dispatch) => {
     dispatch(articleRequested())
     try {
-        const { content } = await articleService.getArticle(articleId)
+        const { content } = await articleService.get()
         dispatch(articleReceved(content))
     } catch (error) {
-        dispatch(articleRequestFiled(error.message))
+        dispatch(articleRequestFiled())
     }
 }
 
@@ -101,7 +108,7 @@ export const deleteArticle = (articleId) => async (dispatch) => {
 }
 
 export const getArticleList = () => (state) => state.article.entities
-export const getAuthorArticleId = () => (state) => state.users.auth.author_id
+export const getAuthorArticleId = () => (state) => state.article.entities.author
 export const getArticleById = (articleId) => (state) => {
     if (state.article.entities) {
         return state.article.entities.find((u) => u._id === articleId)

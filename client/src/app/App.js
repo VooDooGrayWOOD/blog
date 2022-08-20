@@ -14,6 +14,7 @@ import UserPage from './components/page/user/userPage'
 import EditUserPage from './components/page/user/editUserPage'
 import ArticlePage from './components/page/article/articlePage'
 import EditArticlePage from './components/page/article/editArticlePage'
+import NewArticlePage from './components/page/article/newArticlePage'
 
 function App() {
     return (
@@ -29,9 +30,13 @@ function App() {
                         path="/users/:userId/:edit"
                         element={<EditUserPage />}
                     />
-                    <Route path="articles" element={<Articles />} />
+                    <Route path="/articles" element={<Articles />} />
                     <Route
-                        path="articles/:articleId"
+                        path="/articles/new-article"
+                        element={<NewArticlePage />}
+                    />
+                    <Route
+                        path="/articles/:articleId"
                         element={<ArticlePage />}
                     />
                     <Route
