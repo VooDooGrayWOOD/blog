@@ -7,26 +7,26 @@ import { getIsLoggedIn } from '../../store/users'
 const NavBar = () => {
     const isLoggedIn = useSelector(getIsLoggedIn())
     return (
-        <nav className="bg-nav-green relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
-            <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-                <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+        <nav className="relative mb-3 flex flex-wrap items-center justify-between bg-nav-green px-2 py-3">
+            <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
+                <ul className="flex list-none flex-col lg:ml-auto lg:flex-row">
                     <li className="ml-10 flex items-baseline space-x-4">
                         <NavLink
-                            className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
                             aria-current="page"
                             to="/"
                         >
                             Главная
                         </NavLink>
                         <NavLink
-                            className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
                             aria-current="page"
-                            to="/article"
+                            to="/articles"
                         >
                             Статьи
                         </NavLink>
                         <NavLink
-                            className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
                             aria-current="page"
                             to="/about-me"
                         >
@@ -34,7 +34,7 @@ const NavBar = () => {
                         </NavLink>
                         {isLoggedIn && (
                             <NavLink
-                                className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
                                 aria-current="page"
                                 to="/users"
                             >
@@ -48,7 +48,7 @@ const NavBar = () => {
                         <NavProfile />
                     ) : (
                         <NavLink
-                            className="hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
                             aria-current="page"
                             to="/login"
                         >

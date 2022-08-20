@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { paginate } from '../../../utils/paginate'
-import Pagination from '../../common/pagination'
-import OnlineStatus from '../../ui/onlineStatus'
-import UserTable from '../../ui/usersTable'
+import { paginate } from '../../../../utils/paginate'
+import Pagination from '../../../common/pagination'
+import OnlineStatus from '../../../ui/onlineStatus'
+import UserTable from '../../../ui/usersTable'
 import _ from 'lodash'
 import { useSelector } from 'react-redux'
 
-import { getCurrentUserId, getUsersList } from '../../../store/users'
+import { getCurrentUserId, getUsersList } from '../../../../store/users'
 
 const UsersListPage = () => {
     const [currentPage, setCurrentPage] = useState(1)

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { validator } from '../../../utils/validator'
-import TextField from '../../common/form/textField'
-import RadioField from '../../common/form/radioField'
-import BackHistoryButton from '../../common/backButton'
+import { validator } from '../../../../utils/validator'
+import TextField from '../../../common/form/textField'
+import RadioField from '../../../common/form/radioField'
+import BackHistoryButton from '../../../common/backButton'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCurrentUserData, updateUser } from '../../../store/users'
+import { getCurrentUserData, updateUser } from '../../../../store/users'
 
 const EditUserPage = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -75,7 +75,10 @@ const EditUserPage = () => {
                 <div className="p-4">
                     <BackHistoryButton />
                     {!isLoading ? (
-                        <form onSubmit={handleSubmit} className="grid justify-items-center">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="grid justify-items-center"
+                        >
                             <TextField
                                 label="Имя"
                                 name="name"
@@ -104,7 +107,7 @@ const EditUserPage = () => {
                             <button
                                 type="submit"
                                 disabled={!isValid}
-                                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+                                className="rounded border border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
                             >
                                 Обновить
                             </button>
