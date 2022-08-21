@@ -5,11 +5,11 @@ import Pagination from '../../../common/pagination'
 import ArticleTable from '../../../ui/articleTable'
 import { getCurrentUserData } from '../../../../store/users'
 import { Link } from 'react-router-dom'
+import { paginate } from '../../../../utils/paginate'
 
 const ArticleListPage = () => {
     const [currentPage, setCurrentPage] = useState(1)
-    const [searchQuery, setSearchQuery] = useState('')
-    const pageSize = 4
+    const pageSize = 3
 
     const currentUser = useSelector(getCurrentUserData())
     const checkAdmin = currentUser.admin
@@ -18,24 +18,22 @@ const ArticleListPage = () => {
 
     useEffect(() => {
         setCurrentPage(1)
-    }, [searchQuery])
-
-    // const handleSearchQuery = ({ target }) => {
-    //     setSearchQuery(target.value)
-    // }
+    }, [])
 
     const handlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex)
     }
 
     const count = articles.length
+    const articlesCrop = count - pageSize
+    console.log(articlesCrop)
     return (
         <>
             <div className="flex p-4">
                 {checkAdmin && (
                     <Link
                         to="/articles/new-article"
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded-lg"
+                        className="rounded-lg border border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
                     >
                         New post
                     </Link>
@@ -43,14 +41,14 @@ const ArticleListPage = () => {
             </div>
             <div className="flex justify-center">
                 <ArticleTable articles={articles} />
-                <div className="flex justify-items-center">
-                    <Pagination
-                        itemsCount={count}
-                        pageSize={pageSize}
-                        currentPage={currentPage}
-                        onPageChange={handlePageChange}
-                    />
-                </div>
+            </div>
+            <div className="flex justify-center">
+                <Pagination
+                    itemsCount={count}
+                    pageSize={pageSize}
+                    currentPage={currentPage}
+                    onPageChange={handlePageChange}
+                />
             </div>
         </>
     )

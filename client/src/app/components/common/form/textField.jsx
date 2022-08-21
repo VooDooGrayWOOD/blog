@@ -61,14 +61,14 @@ const TextField = ({ label, type, value, name, onChange, error }) => {
 
     return (
         <div className="mb-4">
-            <div className="w-72">
+            <div className="w-[30rem]">
                 <label
                     htmlFor={name}
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
                 >
                     {label}
                 </label>
-                <div className="flex items-center input-group has-validation">
+                <div className="input-group has-validation flex items-center">
                     <Input
                         id={name}
                         value={value}
@@ -82,7 +82,7 @@ const TextField = ({ label, type, value, name, onChange, error }) => {
                         {type === 'password' && (
                             <Button
                                 type="button"
-                                className="text-white bg-gray-800 hover:bg-gray-900 m-auto p-0 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+                                className="m-auto rounded-full bg-gray-800 p-0 text-sm font-medium text-white hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                                 onClick={toggleShowPassword}
                             >
                                 <i>

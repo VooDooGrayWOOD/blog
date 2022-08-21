@@ -1,8 +1,6 @@
 import { createSlice, createAction } from '@reduxjs/toolkit'
 import articleService from '../services/article.service'
 import { history } from '../utils/history'
-import localStorageService from '../services/localStorage.service'
-import login from '../layouts/login'
 
 const articleSlice = createSlice({
     name: 'article',
@@ -108,7 +106,6 @@ export const deleteArticle = (articleId) => async (dispatch) => {
 }
 
 export const getArticleList = () => (state) => state.article.entities
-export const getAuthorArticleId = () => (state) => state.article.entities.author
 export const getArticleById = (articleId) => (state) => {
     if (state.article.entities) {
         return state.article.entities.find((u) => u._id === articleId)

@@ -8,7 +8,7 @@ const TextAreaField = ({ label, value, name, onChange, error }) => {
 
     const getInputClasses = () => {
         return (
-            'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 form-control' +
+            'p-2.5 w-full min-w-[450px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 form-control' +
             (error ? ' is-invalid' : '')
         )
     }
@@ -17,20 +17,21 @@ const TextAreaField = ({ label, value, name, onChange, error }) => {
         <div className="mb-4">
             <label
                 htmlFor={name}
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
             >
                 {label}
             </label>
-            <div className="flex items-center input-group has-validation">
-                <input
+            <div className="has-validation ">
+                <textarea
                     id={name}
+                    rows="6"
                     value={value}
                     name={name}
                     onChange={handleChange}
                     className={getInputClasses()}
                 />
-                {error && <div className="invalid-feedback">{error}</div>}
             </div>
+            {error && <div className="invalid-feedback">{error}</div>}
         </div>
     )
 }
