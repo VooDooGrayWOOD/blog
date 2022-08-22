@@ -1,6 +1,7 @@
 import httpService from './http.service'
+import localStorageService from './localStorage.service'
 
-const articleEndPoint = 'articleTable/'
+const articleEndPoint = 'article/'
 
 const articleService = {
     get: async () => {
@@ -16,7 +17,10 @@ const articleService = {
         return data
     },
     update: async (payload) => {
-        const { data } = await httpService.patch(articleEndPoint, payload)
+        const { data } = await httpService.patch(
+            articleEndPoint + localStorageService.getUserId(),
+            payload
+        )
         return data
     }
 }

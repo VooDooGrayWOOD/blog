@@ -4,7 +4,9 @@ const router = express.Router({ mergeParams: true })
 
 router.get('/', async (req, res) => {
     try {
-        const list = await Article.find()
+        const { orderBy, equalTo } = req.query
+        console.log(req.query)
+        const list = await Article.find({ [orderBy]: equalTo })
         res.status(200).send(list)
     } catch (e) {
         res.status(500).json({
@@ -28,17 +30,10 @@ router.post('/', async (req, res) => {
 router.patch('/:_id', async (req, res) => {
     try {
         const { _id } = req.params
-        if (_id === req.article._id) {
-            const updatedArticle = await Article.findByIdAndUpdate(
-                _id,
-                req.body,
-                {
-                    new: true
-                }
-            )
+        if (_id === req.user._id) {
+            const updatedArticle = await Article.findByIdAndUpdate(req.body)
+            console.log(updatedArticle)
             res.send(updatedArticle)
-        } else {
-            res.status(401).json({ message: 'Unauthorized' })
         }
     } catch (e) {
         res.status(500).json({

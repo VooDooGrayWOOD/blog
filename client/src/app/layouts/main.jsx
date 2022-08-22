@@ -26,15 +26,6 @@ const Main = () => {
             <div className="bg-[--secondary]">
                 <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
                     <div>
-                        <h2 className="text-2xl font-extrabold tracking-tight text-teal-700 sm:text-4xl">
-                            I'm Sergey, software engineer
-                        </h2>
-                        <p className="mt-4 text-gray-500">
-                            I specialize in JavaScript, including React. I write
-                            about my successes on Twitter, I post the code on
-                            GitHub.
-                        </p>
-
                         <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                             {features.map((feature) => (
                                 <div

@@ -1,4 +1,5 @@
 import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import NavBar from './components/ui/navBar'
 import Main from './layouts/main'
 import LogOut from './layouts/logOut'
@@ -40,7 +41,7 @@ function App() {
                         element={<ArticlePage />}
                     />
                     <Route
-                        path="/articles/:articleId/:edit"
+                        path="/articles/:articleId/edit"
                         element={<EditArticlePage />}
                     />
                     <Route path="/settings" element={<Settings />} />

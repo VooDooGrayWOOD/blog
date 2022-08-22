@@ -7,43 +7,45 @@ import { getIsLoggedIn } from '../../store/users'
 const NavBar = () => {
     const isLoggedIn = useSelector(getIsLoggedIn())
     return (
-        <nav className="relative mb-3 flex flex-wrap items-center justify-between bg-nav-green px-2 py-3">
+        <nav className="bg-nav-green relative mb-3 flex flex-wrap items-center justify-between px-2 py-3">
             <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
-                <ul className="flex list-none flex-col lg:ml-auto lg:flex-row">
-                    <li className="ml-10 flex items-baseline space-x-4">
-                        <NavLink
-                            className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
-                            aria-current="page"
-                            to="/"
-                        >
-                            Главная
-                        </NavLink>
-                        <NavLink
-                            className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
-                            aria-current="page"
-                            to="/articles"
-                        >
-                            Статьи
-                        </NavLink>
-                        <NavLink
-                            className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
-                            aria-current="page"
-                            to="/about-me"
-                        >
-                            Обо мне
-                        </NavLink>
-                        {isLoggedIn && (
+                <div>
+                    <ul className="flex list-none flex-col lg:ml-auto lg:flex-row">
+                        <li className="ml-10 flex items-baseline space-x-4">
                             <NavLink
                                 className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
                                 aria-current="page"
-                                to="/users"
+                                to="/"
                             >
-                                Пользователи
+                                Главная
                             </NavLink>
-                        )}
-                    </li>
-                </ul>
-                <div className="d-flex">
+                            <NavLink
+                                className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
+                                aria-current="page"
+                                to="/articles"
+                            >
+                                Статьи
+                            </NavLink>
+                            <NavLink
+                                className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
+                                aria-current="page"
+                                to="/about-me"
+                            >
+                                Обо мне
+                            </NavLink>
+                            {isLoggedIn && (
+                                <NavLink
+                                    className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-gray-700"
+                                    aria-current="page"
+                                    to="/users"
+                                >
+                                    Пользователи
+                                </NavLink>
+                            )}
+                        </li>
+                    </ul>
+                </div>
+                <div>
                     {isLoggedIn ? (
                         <NavProfile />
                     ) : (

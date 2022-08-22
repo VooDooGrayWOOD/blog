@@ -41,7 +41,7 @@ const AddCommentForm = ({ onSubmit }) => {
     return (
         <div>
             <p>Добавить комментарий</p>
-            <form onSubmit={handleSubmit}>
+            <form className="" onSubmit={handleSubmit}>
                 <TextAreaField
                     value={data.content || ''}
                     onChange={handleChange}
@@ -50,7 +50,7 @@ const AddCommentForm = ({ onSubmit }) => {
                     error={errors.content}
                 />
                 <div className="flex content-end">
-                    <button className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <button className="inline-flex items-center rounded-lg bg-blue-700 py-2 px-4 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                         Опубликовать
                     </button>
                 </div>

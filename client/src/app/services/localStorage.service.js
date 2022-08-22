@@ -4,7 +4,6 @@ const EXPIRES_KEY = 'jwt-expires'
 const USERID_KEY = 'user-local-id'
 
 export function setTokens({
-    articleId,
     refreshToken,
     accessToken,
     userId,

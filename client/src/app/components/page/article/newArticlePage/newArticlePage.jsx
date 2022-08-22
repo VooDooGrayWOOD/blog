@@ -76,7 +76,7 @@ const NewArticlePage = () => {
             ...data
         }
         dispatch(createArticle(newData))
-        window.history.go(-1)
+        window.history.go(-2)
     }
 
     return (

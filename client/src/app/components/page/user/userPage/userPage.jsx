@@ -12,7 +12,7 @@ const UserPage = () => {
     const user = useSelector(getUserById(userId))
     if (user) {
         return (
-            <div className="container mx-auto flex max-w-[760px] justify-center pt-5 text-3xl text-teal-700">
+            <div className="container mx-auto flex justify-evenly pt-5 text-3xl text-teal-700">
                 <div className="flex">
                     <div className="mb-6">
                         <UserCard user={user} />

@@ -84,10 +84,10 @@ export const createArticle = (payload) => async (dispatch) => {
 
 export const updateArticle = (payload) => async (dispatch) => {
     dispatch(articleUpdateRequested())
+    console.log(payload)
     try {
         const { content } = await articleService.update(payload)
         dispatch(articleUpdateSuccessed(content))
-        history.push(`/article/${content._id}`)
     } catch (error) {
         dispatch(updateArticleFailed(error.message))
     }
