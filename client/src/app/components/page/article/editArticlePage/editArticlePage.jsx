@@ -6,16 +6,20 @@ import RadioField from '../../../common/form/radioField'
 import { getArticleById, updateArticle } from '../../../../store/article'
 import TextAreaField from '../../../common/form/textAreaField'
 import BackHistoryButton from '../../../common/backButton'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const EditArticlePage = () => {
+    const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(true)
     const params = useParams()
     const { articleId } = params
+    console.log(articleId)
     const [data, setData] = useState()
     const dispatch = useDispatch()
     const article = useSelector(getArticleById(articleId))
+    console.log(article)
     const [errors, setErrors] = useState({})
+    const currentArticle = useSelector(getArticleById())
 
     useEffect(() => {
         if (article && !data) {
@@ -38,7 +42,7 @@ const EditArticlePage = () => {
         }
     }, [data])
 
-    const validatorConfig = {
+    const validatorsConfig = {
         title: {
             isRequired: {
                 message: 'Заголовок обязателен для заполнения'
@@ -71,7 +75,7 @@ const EditArticlePage = () => {
     }, [data])
 
     const validate = () => {
-        const errors = validator(data, validatorConfig)
+        const errors = validator(data, validatorsConfig)
         setErrors(errors)
         return Object.keys(errors).length === 0
     }
@@ -85,7 +89,7 @@ const EditArticlePage = () => {
             ...data
         }
         dispatch(updateArticle(newData))
-        window.history.go(-1)
+        navigate(`articles/${currentArticle}`)
     }
 
     return (

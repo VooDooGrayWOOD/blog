@@ -5,8 +5,10 @@ import RadioField from '../../../common/form/radioField'
 import BackHistoryButton from '../../../common/backButton'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCurrentUserData, updateUser } from '../../../../store/users'
+import { useNavigate } from 'react-router-dom'
 
 const EditUserPage = () => {
+    const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(true)
     const [data, setData] = useState()
     const dispatch = useDispatch()
@@ -23,6 +25,7 @@ const EditUserPage = () => {
                 ...data
             })
         )
+        navigate(`/users/${currentUser._id}`)
     }
 
     useEffect(() => {

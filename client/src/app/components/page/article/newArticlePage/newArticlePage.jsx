@@ -5,15 +5,11 @@ import TextField from '../../../common/form/textField'
 import RadioField from '../../../common/form/radioField'
 import { createArticle } from '../../../../store/article'
 import TextAreaField from '../../../common/form/textAreaField'
-import { getCurrentUserData } from '../../../../store/users'
 import BackHistoryButton from '../../../common/backButton'
 
 const NewArticlePage = () => {
     const dispatch = useDispatch()
-    const currentUser = useSelector(getCurrentUserData())
     const [data, setData] = useState({
-        author: currentUser.name,
-        author_id: currentUser._id,
         title: '',
         description: '',
         image: '',

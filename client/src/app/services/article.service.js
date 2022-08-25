@@ -1,5 +1,5 @@
 import httpService from './http.service'
-import localStorageService from './localStorage.service'
+import { getArticleId } from '../store/article'
 
 const articleEndPoint = 'article/'
 
@@ -18,7 +18,7 @@ const articleService = {
     },
     update: async (payload) => {
         const { data } = await httpService.patch(
-            articleEndPoint + localStorageService.getUserId(),
+            articleEndPoint + getArticleId(),
             payload
         )
         return data

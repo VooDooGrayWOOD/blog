@@ -1,15 +1,16 @@
 const express = require('express')
 const bcrypt = require('bcryptjs')
 const User = require('../models/User')
-const { generateUserData } = require("../utils/helpers")
+const { generateUserData } = require('../utils/helpers')
 const tokenService = require('../services/token.service')
 const { check, validationResult } = require('express-validator')
 const router = express.Router({ mergeParams: true })
 
-
 router.post('/signUp', [
     check('email', 'Некорректный email').isEmail(),
-    check('password', 'Минимальная длинна пароля 8 символов').isLength({min: 8}),
+    check('password', 'Минимальная длинна пароля 8 символов').isLength({
+        min: 8
+    }),
     async (req, res) => {
         try {
             const errors = validationResult(req)
@@ -17,7 +18,7 @@ router.post('/signUp', [
                 return res.status(400).json({
                     error: {
                         message: 'INVALID_DATA',
-                        code: 400,
+                        code: 400
                         // errors: errors.array()
                     }
                 })
@@ -48,13 +49,13 @@ router.post('/signUp', [
             await tokenService.save(newUser._id, tokens.refreshToken)
 
             res.status(201).send({ ...tokens, userId: newUser._id })
-
         } catch (e) {
             res.status(500).json({
                 message: 'На сервере произошла ошибка. Попробуйте позже.'
             })
         }
-}])
+    }
+])
 
 router.post('/signInWithPassword', [
     check('email', 'Email некорректный').normalizeEmail().isEmail(),
@@ -71,7 +72,7 @@ router.post('/signInWithPassword', [
                 })
             }
 
-            const  { email, password } = req.body
+            const { email, password } = req.body
 
             const existingUser = await User.findOne({ email })
 
@@ -84,7 +85,10 @@ router.post('/signInWithPassword', [
                 })
             }
 
-            const isPasswordEqual = await bcrypt.compare(password, existingUser.password)
+            const isPasswordEqual = await bcrypt.compare(
+                password,
+                existingUser.password
+            )
 
             if (!isPasswordEqual) {
                 return res.status(400).send({
@@ -99,13 +103,13 @@ router.post('/signInWithPassword', [
             await tokenService.save(existingUser._id, tokens.refreshToken)
 
             res.status(200).send({ ...tokens, userId: existingUser._id })
-
         } catch (e) {
             res.status(500).json({
                 message: 'На сервере произошла ошибка. Попробуйте позже.'
             })
         }
-}])
+    }
+])
 
 function isTokenInvalid(data, dbToken) {
     return !data || !dbToken || data._id !== dbToken?.user?.toString()
@@ -118,7 +122,7 @@ router.post('/token', async (req, res) => {
         const dbToken = await tokenService.findToken(refreshToken)
 
         if (isTokenInvalid(data, dbToken)) {
-            return res.status(401).json({message: 'Unauthorized'})
+            return res.status(401).json({ message: 'Unauthorized' })
         }
 
         const tokens = await tokenService.generate({

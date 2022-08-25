@@ -13,7 +13,8 @@ const RegisterForm = () => {
         password: '',
         sex: 'male',
         name: '',
-        licence: false
+        licence: false,
+        admin: false
     })
 
     const [errors, setErrors] = useState({})
@@ -128,14 +129,14 @@ const RegisterForm = () => {
                 error={errors.licence}
             >
                 <div className="flex justify-items-center">
-                    <a className="text-sm mr-3 text-white">Подтвердить</a>
+                    <a className="mr-3 text-sm text-white">Подтвердить</a>
                     <a className="text-sm">
                         <em>лицензионное соглашение</em>
                     </a>
                 </div>
             </CheckBoxField>
             <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+                className="rounded border border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
                 type="submit"
                 disabled={!isValid}
             >

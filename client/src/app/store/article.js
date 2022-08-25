@@ -112,4 +112,12 @@ export const getArticleById = (articleId) => (state) => {
     }
 }
 
+export const getArticleId = (articleId) => (state) => {
+    if (state.article.entities) {
+        const data = state.article.entities.find((u) => u._id === articleId)
+        console.log(data._id)
+        return data
+    }
+}
+
 export default articleReducer
