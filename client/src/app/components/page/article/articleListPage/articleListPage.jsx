@@ -10,7 +10,7 @@ const ArticleListPage = () => {
     if (articles) {
         return (
             <>
-                <div className="flex justify-center">
+                <div className="flex justify-center w-auto">
                     <ArticleTable articles={articles} />
                 </div>
             </>

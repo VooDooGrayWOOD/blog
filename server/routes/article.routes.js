@@ -28,13 +28,10 @@ router.post('/', async (req, res) => {
 })
 
 router.patch('/:_id', async (req, res) => {
+    const { _id } = req.body
     try {
-        const { _id } = req.params
-        if (_id === req.user._id) {
-            const updatedArticle = await Article.findByIdAndUpdate(req.body)
-            console.log(updatedArticle)
-            res.send(updatedArticle)
-        }
+        const updatedArticle = await Article.findByIdAndUpdate(_id, req.body, {new: true})
+        res.send(updatedArticle)
     } catch (e) {
         res.status(500).json({
             message: 'На сервере произошла ошибка. Попробуйте позже.'

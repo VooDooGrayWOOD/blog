@@ -22,24 +22,49 @@ const ArticlePage = () => {
                         <div>
                             <Link
                                 to={`/articles/${articleId}/edit`}
-                                className="rounded-lg border border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
                             >
-                                Редактировать
+                                <button
+                                    title='Редактировать статью'
+                                    className="inline-block m-2 rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                                    type="button"
+                            >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                                    </svg>
+                                </button>
                             </Link>
                             <Link
                                 to="/articles/new-article"
-                                className="rounded-lg border border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
                             >
-                                Добавить статью
+                                <button
+                                    title='Добавить статью'
+                                    className="inline-block m-2 rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                                    type="button"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24"
+                                        strokeWidth={1.5} stroke="currentColor"
+                                        className="w-6 h-6">
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M12 4.5v15m7.5-7.5h-15"
+                                        />
+                                    </svg>
+                                </button>
                             </Link>
                         </div>
                     )}
                 </div>
                 <img
-                    className="mt-4 mb-4 ml-3 h-auto "
+                    className="mt-4 mb-4 h-auto rounded-lg"
                     src={article.image}
                     alt="image"
                 />
+                <p className="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+                    {article.source}
+                </p>
                 <h2 className="mb-4 text-4xl font-extrabold dark:text-white">
                     {article.title}
                 </h2>
