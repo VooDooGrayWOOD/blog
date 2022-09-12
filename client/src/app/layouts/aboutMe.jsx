@@ -2,14 +2,28 @@ import React from 'react'
 
 const AboutMe = () => {
     return (
-        <div className="container mx-auto max-w-[760px] pt-5 text-3xl text-teal-700">
-            <h2 className="text-2xl font-extrabold tracking-tight text-teal-700 sm:text-4xl">
-                I'm Sergey, software engineer
+        <div className="container mx-auto max-w-[760px] pt-5 pl-6 pr-6 text-xl text-teal-700">
+            <h2 className="text-xl font-extrabold tracking-tight text-teal-700 sm:text-4xl">
+                Меня зовут Сергей.
             </h2>
-            <p className="mt-4 text-gray-500">
-                I specialize in JavaScript, including React. I write about my
-                successes on Twitter, I post the code on GitHub.
-            </p>
+            <div className="mt-4  text-gray-500">
+                <p className="pb-6">
+                    Я Front-End разработчик, живу в России. У меня серьезная
+                    страсть к эффектам пользовательского интерфейса, анимации и
+                    созданию интуитивно понятного, динамичного пользовательского
+                    интерфейса.
+                </p>
+                <p className="pb-6">
+                    Хорошо организованный человек, умеющий решать проблемы,
+                    независимый сотрудник с большим вниманием к деталям.
+                    Поклонник активного отдыха, сериалов и английской
+                    литературы. Семейный человек и отец двух детей.
+                </p>
+                <p className="pb-6">
+                    Интересуюсь всем спектром интерфейсов и работаю над
+                    амбициозными проектами с позитивными людьми.
+                </p>
+            </div>
         </div>
     )
 }
