@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Table from '../common/table/table'
 import { Link } from 'react-router-dom'
+import {Avatar} from "@material-tailwind/react";
 
 const UserTable = ({ users, onSort, selectedSort }) => {
     const columns = {

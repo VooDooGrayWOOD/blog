@@ -69,7 +69,7 @@ const UsersListPage = () => {
                         selectedSort={sortBy}
                     />
                 )}
-                <div className="flex justify-items-center">
+                <div className="flex justify-center pt-3">
                     <Pagination
                         itemsCount={count}
                         pageSize={pageSize}
