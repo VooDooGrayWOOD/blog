@@ -76,7 +76,7 @@ const EditUserPage = () => {
         <div className="container">
             <div className="row-auto">
                 <div className="p-4">
-                    <BackHistoryButton />
+                    <div className="ml-72"><BackHistoryButton /></div>
                     {!isLoading ? (
                         <form
                             onSubmit={handleSubmit}

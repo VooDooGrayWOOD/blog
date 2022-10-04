@@ -47,7 +47,7 @@
     background:  #3e3f46;
     transition: 0.5s;
     z-index: var(--i);
-    animation: animate 5s ease-in-out infinite;
+    animation: animate 12s ease-in-out infinite;
     animation-delay: calc(-1s * var(--i));
 
 }
