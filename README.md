@@ -6,7 +6,7 @@
 <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" width="36" height="36" alt="NodeJS" /></a>
 </p>
 
-<h3 align="center">My graduation project on React/Redux.</h3>
+<h3 align="center">My social blog on React/Redux.</h3>
 
 Usage:
 
@@ -19,4 +19,4 @@ Next, new window of terminal and:
     npm start
 
 
-<i>And server has been started.</i>
+<i>And client has been started.</i>
