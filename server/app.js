@@ -10,7 +10,7 @@ const routes = require('./routes')
 const app = express()
 
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({extended: false}))
 app.use(cors())
 
 app.use('/api', routes)
@@ -18,13 +18,10 @@ app.use('/api', routes)
 const PORT = config.get('port') ?? 8080
 
 if (process.env.NODE_ENV === 'production') {
-    app.use('../client', express.static(path.join(__dirname, 'build')))
-
-    const indexPath = path.join(__dirname, 'build', 'index.html')
-
+    app.use(express.static(path.resolve(__dirname, 'client', 'build')));
     app.get('*', (req, res) => {
-        res.sendFile(indexPath)
-    })
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
 }
 
 async function start() {

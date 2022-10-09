@@ -5,10 +5,12 @@
   "main": ".prettierrc.js",
   "scripts": {
     "server": "cd server && npm run serve",
-    "client": "cd client && npm start",
+    "client": "cd server && cd client && npm run start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "cd server && node app.js",
+    "install-client": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm install && npm run install-client && npm run build"
   },
   "repository": {
     "type": "git",
