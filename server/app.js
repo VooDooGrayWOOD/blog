@@ -18,9 +18,9 @@ app.use('/api', routes)
 const PORT = config.get('port') ?? 8080
 
 if (process.env.NODE_ENV === 'production') {
-    app.use('/', express.static(path.join(__dirname, 'client')))
+    app.use('../client', express.static(path.join(__dirname, 'build')))
 
-    const indexPath = path.join(__dirname, 'client', 'index.html')
+    const indexPath = path.join(__dirname, 'build', 'index.html')
 
     app.get('*', (req, res) => {
         res.sendFile(indexPath)
