@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg\" width=\"36\" height=\"36\" alt=\"Javascript\" /></a>\r <a href=\"https://reactjs.org/\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg\" width=\"36\" height=\"36\" alt=\"React\" /></a>\r <a href=\"https://www.w3.org/TR/CSS/#css\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg\" width=\"36\" height=\"36\" alt=\"CSS3\" /></a>\r <a href=\"https://tailwindcss.com/\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg\" width=\"36\" height=\"36\" alt=\"TailwindCSS\" /></a>\r <a href=\"https://nodejs.org/en/\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg\" width=\"36\" height=\"36\" alt=\"NodeJS\" /></a>\r </p>",
+  "main": ".prettierrc.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server.js",
+    "install-client": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm install && npm run install-client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VooDooGrayWOOD/blog.git"
+  },
+  "author": "VooDoo_GrayWOOD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VooDooGrayWOOD/blog/issues"
+  },
+  "homepage": "https://github.com/VooDooGrayWOOD/blog#readme"
+}
