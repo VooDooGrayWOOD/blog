@@ -42,11 +42,11 @@ const UserCard = ({ user }) => {
                     src={user.image}
                     alt="current user"
                 />
-                <h5 className="mb-1 text-[2.5rem] font-medium text-gray-900 dark:text-white">
+                <h5 className="mb-1 text-center font-medium text-gray-900 dark:text-white">
                     {user.name}
                 </h5>
-                <span className="text-sm text-gray-500 dark:text-gray-400">
-                    Visual Designer
+                <span className="pt-3 text-center text-sm text-gray-500 dark:text-gray-400">
+                    Frontend Developer
                 </span>
                 {/*<div className="mt-4 flex space-x-3 md:mt-6">*/}
                 {/*    <Link*/}

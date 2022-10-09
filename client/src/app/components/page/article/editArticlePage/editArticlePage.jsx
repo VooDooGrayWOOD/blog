@@ -90,7 +90,7 @@ const EditArticlePage = () => {
     }
 
     return (
-        <div className="container mx-auto max-w-[760px] pt-5 text-2xl text-teal-700">
+        <div className="container mx-auto max-w-[760px] pt-5 text-xl text-teal-700">
             <BackHistoryButton />
             {!isLoading ? (
                 <form

@@ -12,7 +12,7 @@ const articleTable = ({ articles }) => {
                                 <div className="max-w-xl rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800">
                                     <Link to={`/articles/${article._id}`}>
                                         <img
-                                            className="justify-center rounded-t-lg "
+                                            className="justify-center rounded-t-lg"
                                             src={article.image}
                                             alt="image"
                                         />
@@ -28,12 +28,10 @@ const articleTable = ({ articles }) => {
                                         </div>
                                     </div>
                                     <div className="flex justify-end">
-                                        <Link
-                                            to={`/articles/${article._id}`}
-                                        >
+                                        <Link to={`/articles/${article._id}`}>
                                             <button
-                                                title='Читать больше'
-                                                className="inline-block mr-4 mb-4 rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                                                title="Читать больше"
+                                                className="mr-4 mb-4 inline-block rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                                                 type="button"
                                             >
                                                 <svg
@@ -62,4 +60,3 @@ const articleTable = ({ articles }) => {
 }
 
 export default articleTable
-

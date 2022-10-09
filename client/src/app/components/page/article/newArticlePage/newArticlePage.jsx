@@ -76,7 +76,7 @@ const NewArticlePage = () => {
     }
 
     return (
-        <div className="container mx-auto max-w-[760px] pt-5 text-2xl text-teal-700">
+        <div className="container mx-auto max-w-[760px] pt-5 text-xl text-teal-700">
             <BackHistoryButton />
             <form onSubmit={handleSubmit} className="grid justify-items-center">
                 <TextField

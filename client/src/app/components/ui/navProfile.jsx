@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { useSelector } from 'react-redux'
 import { getCurrentUserData } from '../../store/users'
 import { Menu, Transition } from '@headlessui/react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -38,7 +38,7 @@ const NavProfile = () => {
                 <Menu.Items className="bg-nav-green absolute right-0 mt-2 w-48 origin-top-right rounded-md py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <Menu.Item>
                         {({ active }) => (
-                            <Link
+                            <NavLink
                                 to={`/users/${currentUser._id}`}
                                 className={classNames(
                                     active ? 'rounded-md bg-gray-500' : '',
@@ -46,12 +46,12 @@ const NavProfile = () => {
                                 )}
                             >
                                 Профиль
-                            </Link>
+                            </NavLink>
                         )}
                     </Menu.Item>
                     <Menu.Item>
                         {({ active }) => (
-                            <Link
+                            <NavLink
                                 to="/logout"
                                 className={classNames(
                                     active ? 'rounded-md bg-gray-500' : '',
@@ -59,7 +59,7 @@ const NavProfile = () => {
                                 )}
                             >
                                 Выход
-                            </Link>
+                            </NavLink>
                         )}
                     </Menu.Item>
                 </Menu.Items>

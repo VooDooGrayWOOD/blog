@@ -73,10 +73,10 @@ const EditUserPage = () => {
     }
     const isValid = Object.keys(errors).length === 0
     return (
-        <div className="container">
+        <div className="container mx-auto max-w-[760px] pt-5 text-xl text-teal-700">
             <div className="row-auto">
                 <div className="p-4">
-                    <div className="ml-72"><BackHistoryButton /></div>
+                    <BackHistoryButton />
                     {!isLoading ? (
                         <form
                             onSubmit={handleSubmit}

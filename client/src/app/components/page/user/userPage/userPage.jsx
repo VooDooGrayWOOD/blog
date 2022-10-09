@@ -5,7 +5,7 @@ import Comments from '../../../ui/comments'
 import { useSelector } from 'react-redux'
 import { getUserById } from '../../../../store/users'
 import { useParams } from 'react-router-dom'
-import BackHistoryButton from "../../../common/backButton";
+import BackHistoryButton from '../../../common/backButton'
 
 const UserPage = () => {
     const params = useParams()
@@ -14,17 +14,17 @@ const UserPage = () => {
     if (user) {
         return (
             <>
-                <div className="ml-72"><BackHistoryButton /></div>
-                    <div className="container mx-auto flex justify-evenly pt-5 text-3xl text-teal-700">
-                        <div className="flex">
-                            <div className="mb-6">
-                                <UserCard user={user} />
-                            </div>
-                            <div className="mb-6">
-                                <Comments />
-                            </div>
+                <div className="container mx-auto max-w-[760px] pt-5 text-xl text-teal-700">
+                    <BackHistoryButton />
+                    <div className="justify-center md:flex">
+                        <div className="m-3 mb-6">
+                            <UserCard user={user} />
+                        </div>
+                        <div className="mb-6">
+                            <Comments />
                         </div>
                     </div>
+                </div>
             </>
         )
     } else {
