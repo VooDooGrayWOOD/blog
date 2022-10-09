@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/VooDooGrayWOOD/blog/issues"
   },
-  "homepage": "https://github.com/VooDooGrayWOOD/blog",
+  "homepage": "https://VooDooGrayWOOD.github.io/blog",
   "devDependencies": {
     "concurrently": "^7.4.0",
     "gh-pages": "^4.0.0"
