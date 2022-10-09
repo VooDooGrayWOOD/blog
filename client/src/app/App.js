@@ -7,7 +7,6 @@ import Login from './layouts/login'
 import { Routes, Route } from 'react-router-dom'
 import AboutMe from './layouts/aboutMe'
 import Articles from './layouts/articles'
-import Settings from './layouts/settings'
 import { Navigate } from 'react-router-dom'
 import Users from './layouts/users'
 import AppLoader from './components/ui/hoc/appLoader'
@@ -44,7 +43,6 @@ function App() {
                         path="/articles/:articleId/edit"
                         element={<EditArticlePage />}
                     />
-                    <Route path="/settings" element={<Settings />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/logout" element={<LogOut />} />
                     <Route path="*" element={<Navigate to="/" />} />

@@ -61,7 +61,7 @@ const TextField = ({ label, type, value, name, onChange, error }) => {
 
     return (
         <div className="mb-4">
-            <div className="w-[30rem]">
+            <div className="w-auto">
                 <label
                     htmlFor={name}
                     className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"

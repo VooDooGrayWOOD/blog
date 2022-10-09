@@ -15,11 +15,11 @@ const Login = () => {
     }
 
     return (
-        <div className="container m-auto">
+        <div className=" ">
             <div>
                 {formType === 'register' ? (
                     <div className="">
-                        <h3 className="flex justify-center mb-4">
+                        <h3 className="mb-4 flex justify-center">
                             Зарегестрироваться
                         </h3>
                         <RegisterForm />
@@ -37,7 +37,7 @@ const Login = () => {
                     </div>
                 ) : (
                     <div className="flex-col items-center">
-                        <h3 className="flex justify-center mb-4">Войти</h3>
+                        <h3 className="mb-4 flex justify-center">Войти</h3>
                         <LoginForm />
                         <p className="flex justify-center pt-4">
                             Нет аккаунта?{' '}
