@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:9000",
   "dependencies": {
     "@dicebear/pixel-art": "^4.10.3",
     "@headlessui/react": "^1.6.6",
