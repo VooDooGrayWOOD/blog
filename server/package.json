@@ -3,14 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "server": "nodemon app.js",
-    "client": "cd ../client && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "node app.js && npm run client",
-    "install-client": "cd ../client && npm install",
-    "build": "cd ../client && npm run build",
-    "heroku-postbuild": "npm install && npm run install-client && npm run build"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
