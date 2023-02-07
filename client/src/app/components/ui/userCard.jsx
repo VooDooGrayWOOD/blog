@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import { getCurrentUserId } from '../../store/users'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const UserCard = ({ user }) => {
     const currentUserId = useSelector(getCurrentUserId())

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { getDataStatus, loadUsersList } from '../../../store/users'
 import { useDispatch, useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
