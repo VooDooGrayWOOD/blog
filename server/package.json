@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "server": "nodemon app.js",
+    "build": "babel src -d dist",
     "start": "node app.js"
   },
   "author": "",
