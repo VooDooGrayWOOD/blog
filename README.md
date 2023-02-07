@@ -1,4 +1,7 @@
-<h3 align="center">Deploy -> https://blog-vwsb.onrender.com/</h3>
+<h4 align="center">Client-server application (social blog) based on MongoDB, Express, React, Node js and css framework Tailwind CSS. With jwt authentication (registration of new users), edit user profile, add new articles, edit articles. All this when using Redux as a state management library. Sorting users by name and gender. Search for users by name. And two entities: users, articles.</h4>
+
+<h3 align="center">Deploy -> https://blog-vwsb.onrender.com</h3>
+
 <p align="center">
 <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" width="36" height="36" alt="Express" /></a>
 <a href="https://expressjs.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored-dark.svg" width="36" height="36" alt="Express" /></a>
@@ -13,12 +16,8 @@
 
 Usage:
 
-    npm run serve
-
-Next, new window of terminal and:
-
-    cd client
+    npm install
+    npm run install-all    
     npm start
 
 
-<i>And client has been started.</i>

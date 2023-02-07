@@ -10,6 +10,7 @@
     "install-server": "cd server && npm install",
     "install-all": "npm run install-server && npm run install-client",
     "dev": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "start": "concurrently \"cd server && npm run start\" \"npm run start-client\"",
     "build": "cd client && npm run build",
     "deploy-postbuild": "npm run install-client && npm run build"
   },
@@ -23,7 +24,7 @@
     "url": "https://github.com/VooDooGrayWOOD/blog/issues"
   },
   "homepage": "https://github.com/VooDooGrayWOOD/blog#readme",
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^7.6.0"
   }
 }
