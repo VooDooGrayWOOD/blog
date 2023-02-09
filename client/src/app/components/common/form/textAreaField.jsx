@@ -8,7 +8,7 @@ const TextAreaField = ({ label, value, name, onChange, error }) => {
 
     const getInputClasses = () => {
         return (
-            'p-2.5 w-full min-w-[300px] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 form-control' +
+            'p-2.5 w-full min-w-[250px] text-sm rounded-lg border-none bg-gray-700 placeholder-gray-400 text-white focus:ring-teal-700 focus:border-teal-500' +
             (error ? ' is-invalid' : '')
         )
     }
@@ -17,7 +17,7 @@ const TextAreaField = ({ label, value, name, onChange, error }) => {
         <div className="mb-4">
             <label
                 htmlFor={name}
-                className="mb-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
+                className="mb-2 block text-sm font-medium text-gray-500"
             >
                 {label}
             </label>

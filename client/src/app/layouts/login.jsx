@@ -37,7 +37,7 @@ const Login = () => {
                     </div>
                 ) : (
                     <div className="flex-col items-center">
-                        <h3 className="mb-4 flex justify-center">Войти</h3>
+                        <h3 className="mb-4 mt-6 flex justify-center">Войти</h3>
                         <LoginForm />
                         <p className="flex justify-center pt-4">
                             Нет аккаунта?{' '}

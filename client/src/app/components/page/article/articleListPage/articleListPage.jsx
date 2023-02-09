@@ -10,7 +10,7 @@ const ArticleListPage = () => {
     if (articles) {
         return (
             <>
-                <div className="flex justify-center w-auto">
+                <div className="flex w-auto justify-center">
                     <ArticleTable articles={articles} />
                 </div>
             </>
@@ -27,7 +27,7 @@ const ArticleListPage = () => {
                 <div className="mt-6 flex justify-center">
                     <Link
                         to={`/login`}
-                        className=" rounded-lg border border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+                        className="rounded-lg border border-none bg-teal-500 py-2 px-4 hover:bg-teal-700 hover:text-white"
                     >
                         Войти/Зарегистрироваться
                     </Link>

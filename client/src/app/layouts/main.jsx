@@ -18,7 +18,6 @@ const Main = () => {
                         <span style={{ '--i': 2 }}>React/Redux.</span>
                     </div>
                 </div>
-                {/*</div>*/}
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import NavProfile from './navProfile'
 import { useSelector } from 'react-redux'
@@ -96,7 +96,7 @@ const NavBar = () => {
                         </div>
                     </div>
 
-                    <Disclosure.Panel className="sm:hidden">
+                    <Disclosure.Panel className="sm:hidden fixed t-0 l-0 z-10 bg-gray-800 min-w-[250px] h-full">
                         <div className="space-y-1 px-2 pt-2 pb-3">
                             {navigation.map((item) => (
                                 <Disclosure.Button
@@ -107,7 +107,7 @@ const NavBar = () => {
                                         item.current
                                             ? 'bg-gray-900 text-white'
                                             : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                        'block rounded-md px-3 py-2 text-base font-medium'
+                                        'block rounded-md px-3 p-10 items-center cursor-pointer text-center font-medium'
                                     )}
                                     aria-current={
                                         item.current ? 'page' : undefined
@@ -118,7 +118,7 @@ const NavBar = () => {
                             ))}
                             {isLoggedIn && (
                                 <Disclosure.Button
-                                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700"
+                                    className="block rounded-md px-3 p-10 text-center items-center font-medium text-gray-300 hover:bg-gray-700"
                                     aria-current="page"
                                     as={NavLink}
                                     to="/users"

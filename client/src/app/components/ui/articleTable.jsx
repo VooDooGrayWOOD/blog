@@ -9,7 +9,7 @@ const articleTable = ({ articles }) => {
                     <div className="mx-auto mt-3" key={article._id}>
                         <div className="mx-auto mb-3 max-w-7xl px-5">
                             <div className="mt-6">
-                                <div className="max-w-xl rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800">
+                                <div className="max-w-xl rounded-lg border-none bg-gray-800 shadow-md">
                                     <Link to={`/articles/${article._id}`}>
                                         <img
                                             className="justify-center rounded-t-lg"
@@ -19,7 +19,7 @@ const articleTable = ({ articles }) => {
                                     </Link>
                                     <div className="p-5">
                                         <Link to={`/articles/${article._id}`}>
-                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-300">
                                                 {article.title}
                                             </h5>
                                         </Link>
@@ -31,7 +31,7 @@ const articleTable = ({ articles }) => {
                                         <Link to={`/articles/${article._id}`}>
                                             <button
                                                 title="Читать больше"
-                                                className="mr-4 mb-4 inline-block rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                                                className="mr-4 mb-4 inline-block rounded-lg p-1.5 text-sm focus:outline-none focus:ring-4 focus:ring-gray-200 text-gray-400 hover:bg-gray-700 focus:ring-gray-700"
                                                 type="button"
                                             >
                                                 <svg

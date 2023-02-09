@@ -32,22 +32,22 @@ const Comment = ({
     )
 
     return (
-        <div className="w-full max-w-3xl bg-white mt-3 p-3 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div className="mt-3 w-full max-w-3xl rounded-lg border-none bg-gray-800 shadow-md">
             <div className="flex">
                 <div>
                     <div className="flex">
                         <img
                             src={user.image}
-                            className="rounded-circle shadow-1-strong me-3 mr-[30px]"
+                            className="rounded-circle shadow-md-strong me-3 mr-[30px]"
                             alt="avatar"
                             width="40"
                             height="40"
                         />
                         <div className="flex-col justify-around">
                             <div className="mb-4">
-                                <div className="flex justify-around items-center">
+                                <div className="flex items-center justify-around">
                                     <div className="flex">
-                                        <p className="text-xl mb-1">
+                                        <p className="mb-1 text-xl">
                                             {user && user.name}{' '}
                                             <span className="text-sm">
                                                 - {displayDate(created)}
@@ -56,7 +56,7 @@ const Comment = ({
                                     </div>
                                 </div>
                             </div>
-                            <p className="text-xl break-all">{content}</p>
+                            <p className="break-all text-xl">{content}</p>
                         </div>
                     </div>
                 </div>

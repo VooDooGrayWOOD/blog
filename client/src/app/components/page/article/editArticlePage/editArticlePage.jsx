@@ -67,15 +67,16 @@ const EditArticlePage = () => {
         }
     }
 
-    useEffect(() => {
-        validate()
-    }, [data])
-
     const validate = () => {
         const errors = validator(data, validatorsConfig)
         setErrors(errors)
         return Object.keys(errors).length === 0
     }
+
+    useEffect(() => {
+        validate()
+    }, [data])
+
     const isValid = Object.keys(errors).length === 0
 
     const handleSubmit = (e) => {
@@ -90,7 +91,7 @@ const EditArticlePage = () => {
     }
 
     return (
-        <div className="container mx-auto max-w-[760px] pt-5 text-xl text-teal-700">
+        <div className="container mx-auto max-w-[760px] pt-5 text-l text-teal-700">
             <BackHistoryButton />
             {!isLoading ? (
                 <form
@@ -137,7 +138,7 @@ const EditArticlePage = () => {
                         error={errors.image}
                     />
                     <button
-                        className="mb-10 rounded border border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+                        className="m-10 rounded-lg border border-none bg-teal-500 py-2 px-4 hover:bg-teal-700 hover:text-white"
                         type="submit"
                         disabled={!isValid}
                     >

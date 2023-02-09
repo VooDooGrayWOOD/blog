@@ -136,7 +136,7 @@ const RegisterForm = () => {
                 </div>
             </CheckBoxField>
             <button
-                className="rounded border border-blue-700 bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+                className="rounded-lg border border-none bg-teal-500 py-2 px-4 hover:bg-teal-700 hover:text-white"
                 type="submit"
                 disabled={!isValid}
             >

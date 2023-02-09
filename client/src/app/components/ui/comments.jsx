@@ -34,13 +34,13 @@ const Comments = () => {
     return (
         <div className="flex-col">
             <div>
-                <div className="m-3 block rounded-lg border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
+                <div className="m-3 block rounded-lg border border-gray-700 bg-gray-800 p-6 shadow-md">
                     <AddCommentForm onSubmit={handleSubmit} />
                 </div>
             </div>
             {sortedComments.length > 0 && (
                 <div>
-                    <div className="m-3 block rounded-lg border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
+                    <div className="m-3 block rounded-lg border border-gray-700 bg-gray-800 p-6 shadow-md">
                         <h2>Комментарии</h2>
                         {!isLoading ? (
                             <CommentsList

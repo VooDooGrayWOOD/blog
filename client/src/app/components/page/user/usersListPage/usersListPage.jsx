@@ -52,7 +52,7 @@ const UsersListPage = () => {
 
     return (
         <div className="flex justify-center">
-            <div className="flex flex-col w-[72rem]">
+            <div className="flex w-[72rem] flex-col">
                 <OnlineStatus length={count} />
                 <input
                     type="text"
@@ -60,7 +60,7 @@ const UsersListPage = () => {
                     placeholder="Search..."
                     onChange={handleSearchQuery}
                     value={searchQuery}
-                    className="block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    className="block rounded-lg border p-2.5 text-sm  bg-gray-700 border-teal-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-lime-500"
                 />
                 {count > 0 && (
                     <UserTable

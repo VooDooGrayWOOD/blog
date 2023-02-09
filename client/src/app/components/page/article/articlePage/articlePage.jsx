@@ -23,7 +23,7 @@ const ArticlePage = () => {
                             <Link to={`/articles/${articleId}/edit`}>
                                 <button
                                     title="Редактировать статью"
-                                    className="m-2 inline-block rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                                    className="m-2 inline-block rounded-lg p-1.5 text-sm text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-700"
                                     type="button"
                                 >
                                     <svg
@@ -45,7 +45,7 @@ const ArticlePage = () => {
                             <Link to="/articles/new-article">
                                 <button
                                     title="Добавить статью"
-                                    className="m-2 inline-block rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                                    className="m-2 inline-block rounded-lg p-1.5 text-sm text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-700"
                                     type="button"
                                 >
                                     <svg

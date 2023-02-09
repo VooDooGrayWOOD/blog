@@ -14,7 +14,7 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
     }
 
     return (
-        <thead className="bg-gray-50 text-xs uppercase text-gray-700 dark:bg-gray-700 dark:text-gray-400">
+        <thead className="text-xs uppercase bg-gray-700 text-gray-400">
             <tr>
                 {Object.keys(columns).map((column) => (
                     <th

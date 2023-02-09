@@ -14,7 +14,7 @@ const UserPage = () => {
     if (user) {
         return (
             <>
-                <div className="container mx-auto max-w-[760px] pt-5 text-xl text-teal-700">
+                <div className="container mx-auto max-w-[760px] pt-5 text-l text-teal-700">
                     <BackHistoryButton />
                     <div className="justify-center md:flex">
                         <div className="m-3 mb-6">

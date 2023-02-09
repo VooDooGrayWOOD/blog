@@ -9,11 +9,11 @@ const UserCard = ({ user }) => {
     const navigate = useNavigate()
 
     return (
-        <div className="w-full rounded-lg border border-gray-200 bg-white shadow-md dark:border-gray-700 dark:bg-gray-800">
+        <div className="w-full rounded-lg border-none bg-gray-800 shadow-md">
             {currentUserId === user._id && (
                 <div className="flex justify-end px-4 pt-4">
                     <button
-                        className="inline-block rounded-lg p-1.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                        className="inline-block rounded-lg p-1.5 text-sm text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 focus:ring-gray-700"
                         type="button"
                         onClick={() => {
                             navigate(`/users/${currentUserId}/edit`)
@@ -42,26 +42,26 @@ const UserCard = ({ user }) => {
                     src={user.image}
                     alt="current user"
                 />
-                <h5 className="mb-1 text-center font-medium text-gray-900 dark:text-white">
+                <h5 className="mb-1 text-center text-xl text-gray-400">
                     {user.name}
                 </h5>
-                <span className="pt-3 text-center text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-l pt-3 text-center text-teal-700">
                     Frontend Developer
                 </span>
-                {/*<div className="mt-4 flex space-x-3 md:mt-6">*/}
-                {/*    <Link*/}
-                {/*        to="#"*/}
-                {/*        className="inline-flex items-center rounded-lg bg-blue-700 py-2 px-4 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"*/}
-                {/*    >*/}
-                {/*        Add friend*/}
-                {/*    </Link>*/}
-                {/*    <Link*/}
-                {/*        to="#"*/}
-                {/*        className="inline-flex items-center rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"*/}
-                {/*    >*/}
-                {/*        Message*/}
-                {/*    </Link>*/}
-                {/*</div>*/}
+                {/* <div className="mt-4 flex space-x-3 md:mt-6">
+                    <Link
+                        to="#"
+                        className="inline-flex items-center rounded-lg bg-blue-700 py-2 px-4 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                        Add friend
+                    </Link>
+                    <Link
+                        to="#"
+                        className="inline-flex items-center rounded-lg border border-gray-300 bg-white py-2 px-4 text-center text-sm font-medium text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                    >
+                        Message
+                    </Link>
+                </div> */}
             </div>
         </div>
     )
