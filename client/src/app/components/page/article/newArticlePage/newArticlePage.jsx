@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { validator } from '../../../../utils/validator'
 import TextField from '../../../common/form/textField'
 import RadioField from '../../../common/form/radioField'
@@ -55,7 +55,7 @@ const NewArticlePage = () => {
     }
     useEffect(() => {
         validate()
-    }, [data])
+    }, [data, validate])
 
     const validate = () => {
         const errors = validator(data, validatorConfig)

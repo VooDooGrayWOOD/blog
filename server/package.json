@@ -1,9 +1,9 @@
 {
-  "name": "blog-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "mern-blog",
+  "version": "1.0.2",
+  "description": "MERN blog by VooDoo_GrayWOOD",
   "scripts": {
+<<<<<<<< HEAD:server/package.json
     "server": "nodemon app.js",
     "client": "cd ../client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -11,22 +11,30 @@
     "install-client": "cd ../client && npm install",
     "build": "cd ../client && npm run build",
     "deploy-postbuild": "npm install && npm run install-client && npm run build"
+========
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-client": "cd client && npm start",
+    "start-server": "cd server && npm run server",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "dev": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "start": "concurrently \"cd server && npm run start\" \"npm run start-client\"",
+    "build": "cd client && npm run build",
+    "deploy-postbuild": "npm run install-client && npm run build"
+>>>>>>>> origin/master:package.json
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VooDooGrayWOOD/blog.git"
+  },
+  "author": "VooDoo_GrayWOOD",
   "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "chalk": "^4.1.2",
-    "config": "^3.3.7",
-    "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "express-validator": "^6.14.2",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.5.2"
+  "bugs": {
+    "url": "https://github.com/VooDooGrayWOOD/blog/issues"
   },
-  "devDependencies": {
-    "concurrently": "^7.4.0",
-    "cross-env": "^7.0.3",
-    "nodemon": "^2.0.20"
+  "homepage": "https://github.com/VooDooGrayWOOD/blog#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
   }
 }

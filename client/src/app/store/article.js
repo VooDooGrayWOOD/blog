@@ -1,6 +1,5 @@
 import { createSlice, createAction } from '@reduxjs/toolkit'
 import articleService from '../services/article.service'
-import { history } from '../utils/history'
 
 const articleSlice = createSlice({
     name: 'article',
