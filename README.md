@@ -15,9 +15,13 @@
 <h3 align="center">My social blog on MERN.</h3>
 
 Usage:
-
+    
+    cd client
     npm install
-    npm run install-all    
+    
+    cd server
+    npm install
+      
     npm start
 
 
