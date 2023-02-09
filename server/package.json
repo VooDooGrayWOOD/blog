@@ -3,7 +3,6 @@
   "version": "1.0.2",
   "description": "MERN blog by VooDoo_GrayWOOD",
   "scripts": {
-<<<<<<<< HEAD:server/package.json
     "server": "nodemon app.js",
     "client": "cd ../client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -11,18 +10,6 @@
     "install-client": "cd ../client && npm install",
     "build": "cd ../client && npm run build",
     "deploy-postbuild": "npm install && npm run install-client && npm run build"
-========
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-client": "cd client && npm start",
-    "start-server": "cd server && npm run server",
-    "install-client": "cd client && npm install",
-    "install-server": "cd server && npm install",
-    "install-all": "npm run install-server && npm run install-client",
-    "dev": "concurrently \"npm run start-server\" \"npm run start-client\"",
-    "start": "concurrently \"cd server && npm run start\" \"npm run start-client\"",
-    "build": "cd client && npm run build",
-    "deploy-postbuild": "npm run install-client && npm run build"
->>>>>>>> origin/master:package.json
   },
   "repository": {
     "type": "git",
