@@ -1,5 +1,5 @@
 {
-  "port": 3000,
+  "port": 3001,
   "mongoUri": "mongodb://unkyxumb0cx0ufyrpf3w:IJqDndUCDLPf41Bn8a0o@n1-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017,n2-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017/blevszuyewty3uj?replicaSet=rs0",
   "accessSecret": "super secret from backend",
   "refreshSecret": "super refresh key"
