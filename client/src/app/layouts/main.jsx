@@ -9,13 +9,13 @@ const Main = () => {
                     <div className="loader text-center text-3xl">
                         <span style={{ '--i': 10 }}>Welcome to</span>
                         <span style={{ '--i': 9 }}>my</span>
-                        <span style={{ '--i': 8 }}>project on</span>
-                        <span style={{ '--i': 7 }}>the Junior</span>
-                        <span style={{ '--i': 6 }}>Frontend</span>
-                        <span style={{ '--i': 5 }}>Developer</span>
-                        <span style={{ '--i': 4 }}>course.</span>
-                        <span style={{ '--i': 3 }}>Based on</span>
-                        <span style={{ '--i': 2 }}>React/Redux.</span>
+                        <span style={{ '--i': 8 }}>blog.</span>
+                        <span style={{ '--i': 7 }}>I'am Frontend</span>
+                        <span style={{ '--i': 6 }}>Developer.</span>
+                        <span style={{ '--i': 5 }}>This app</span>
+                        <span style={{ '--i': 4 }}>based on</span>
+                        <span style={{ '--i': 3 }}>React/Redux.</span>
+                        <span style={{ '--i': 2 }}>Enjoy!</span>
                     </div>
                 </div>
             </div>
